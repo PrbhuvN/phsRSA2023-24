@@ -11,8 +11,12 @@ class DashboardPage extends React.Component {
         return (
           <View style={styles.container}>
             <Text style={styles.title}>Helo ur computer has virus</Text>
-            <Button title="Login"></Button>
-            <Button title="Sign Up"></Button>
+            <Button 
+              title="Sign Out"
+              onPress={() => {
+                this.props.navigation.popToTop();
+              }}
+            />
           </View>
         );
     }

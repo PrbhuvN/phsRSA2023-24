@@ -28,7 +28,7 @@ class SignupPage extends React.Component {
               onChangeText={(text) => this.setState({password:text})}
             />
             <Button 
-              title="Login"
+              title="Sign Up"
               onPress={() => {
                 console.log('hello ' + this.state.email + ' ' + this.state.password);
                 this.props.navigation.navigate('Dashboard');

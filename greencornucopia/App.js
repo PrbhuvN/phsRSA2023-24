@@ -34,6 +34,7 @@ class App extends React.Component {
             <Stack.Screen
               name='Dashboard'
               component={DashboardPage}
+              options={{ headerShown: false }}
             />
           </Stack.Navigator>
         </NavigationContainer>
