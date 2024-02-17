@@ -15,7 +15,7 @@ class SignupPage extends React.Component {
     render() {
         return (
           <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
+            <Text style={styles.title}>Signup</Text>
             <TextInput 
               style={styles.input}
               placeholder="email"

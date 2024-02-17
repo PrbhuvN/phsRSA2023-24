@@ -12,29 +12,29 @@ const Stack = createStackNavigator();
 class App extends React.Component {
 
     constructor(props) {
-        super(props);
+      super(props);
     }
 
     render() {
       return (
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName='Home'>
             <Stack.Screen
-             name='Home'
-             component={AuthPage}
-             />
-             <Stack.Screen
-             name='Login'
-             component={LoginPage}
-             />
-             <Stack.Screen
-             name='Signup'
-             component={SignupPage}
-             />
-             <Stack.Screen
-             name='Dashboard'
-             component={DashboardPage}
-             />
+              name='Home'
+              component={AuthPage}
+            />
+            <Stack.Screen
+              name='Login'
+              component={LoginPage}
+            />
+            <Stack.Screen
+              name='Signup'
+              component={SignupPage}
+            />
+            <Stack.Screen
+              name='Dashboard'
+              component={DashboardPage}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       );
