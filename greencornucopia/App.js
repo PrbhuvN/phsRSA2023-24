@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import AuthPage from './OtherPages/AuthPage';
-import LoginPage from './OtherPages/LoginPage';
+import LoginPage from './OtherPages/AuthPage';
 import SignupPage from './OtherPages/SignupPage';
 import DashboardPage from './OtherPages/DashboardPage';
 
@@ -18,18 +18,10 @@ class App extends React.Component {
     render() {
       return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='Home'>
+          <Stack.Navigator initialRouteName='Authentication'>
             <Stack.Screen
-              name='Home'
+              name='Authentication'
               component={AuthPage}
-            />
-            <Stack.Screen
-              name='Login'
-              component={LoginPage}
-            />
-            <Stack.Screen
-              name='Signup'
-              component={SignupPage}
             />
             <Stack.Screen
               name='Dashboard'
