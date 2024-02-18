@@ -38,16 +38,14 @@ class LoginPage extends React.Component {
               title="Login"
               onPress={() => {
                 console.log('logging in ' + this.state.email + ' ' + this.state.password);
-                login(this.state.email, this.state.password);
-                this.props.navigation.navigate('Dashboard');
+                login(this.state.email, this.state.password, this.props.navigation);
               }}
             />
             <Button 
               title="Sign Up"
               onPress={() => {
                 console.log('signing up ' + this.state.email + ' ' + this.state.password)
-                signup(this.state.email, this.state.password);
-                this.props.navigation.navigate('Dashboard');
+                signup(this.state.email, this.state.password, this.props.navigation);
               }}
             />
           </KeyboardAvoidingView>
@@ -59,10 +57,11 @@ class LoginPage extends React.Component {
 const auth = getAuth(firebaseApp);
 // const keyboardOffset = useHeaderHeight();
 
-const login = async (email, password) => {
+const login = async (email, password, navigation) => {
   try {
     const response = await signInWithEmailAndPassword(auth, email, password);
     console.log(response);
+    navigation.navigate('Dashboard');
   } catch(error) {
     console.log(error);
     alert(error);
@@ -73,6 +72,7 @@ const signup = async (email, password) => {
   try {
     const response = await createUserWithEmailAndPassword(auth, email, password);
     console.log(response);
+    navigation.navigate('Dashboard');
   } catch(error) {
     console.log(error);
     alert(error);
