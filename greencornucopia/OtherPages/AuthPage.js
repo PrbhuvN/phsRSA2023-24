@@ -1,28 +1,34 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
-import firebaseAuth from './FirebaseConfig';
+import firebaseApp from './FirebaseConfig';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
+import { KeyboardAvoidingView } from "react-native";
  
 class LoginPage extends React.Component {
 
-    constructor(props) {
-        super(props);
+  constructor(props) {
+      super(props);
 
-        this.state = {
-          email: '',
-          password: '',
-        }
-    }
+      this.state = {
+        email: '',
+        password: '',
+      }
+  }
 
-    render() {
-        return (
-          <View style={styles.container}>
+  render() {
+      return (
+        <View style={styles.container}>
+          <KeyboardAvoidingView 
+            behavior="padding"
+            style={styles.container}
+          >
             <Text style={styles.title}>Green Cornucopia</Text>
-            <TextInput 
+            <TextInput
               style={styles.input}
               placeholder="email"
               onChangeText={(text) => this.setState({email:text})}
             />
-            <TextInput 
+            <TextInput
               style={styles.input}
               placeholder="password"
               secureTextEntry={true}
@@ -31,20 +37,46 @@ class LoginPage extends React.Component {
             <Button 
               title="Login"
               onPress={() => {
-                console.log('hello ' + this.state.email + ' ' + this.state.password);
+                console.log('logging in ' + this.state.email + ' ' + this.state.password);
+                login(this.state.email, this.state.password);
                 this.props.navigation.navigate('Dashboard');
               }}
             />
             <Button 
               title="Sign Up"
               onPress={() => {
-                console.log('hello ' + this.state.email + ' ' + this.state.password);
+                console.log('signing up ' + this.state.email + ' ' + this.state.password)
+                signup(this.state.email, this.state.password);
                 this.props.navigation.navigate('Dashboard');
               }}
             />
-          </View>
-        );
-    }
+          </KeyboardAvoidingView>
+        </View>
+      );
+  }
+}
+
+const auth = getAuth(firebaseApp);
+// const keyboardOffset = useHeaderHeight();
+
+const login = async (email, password) => {
+  try {
+    const response = await signInWithEmailAndPassword(auth, email, password);
+    console.log(response);
+  } catch(error) {
+    console.log(error);
+    alert(error);
+  }
+}
+
+const signup = async (email, password) => {
+  try {
+    const response = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(response);
+  } catch(error) {
+    console.log(error);
+    alert(error);
+  }
 }
 
 const styles = StyleSheet.create({
@@ -57,7 +89,8 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: 'bold',
-    fontSize: 24
+    fontSize: 24,
+    padding: 5
   },
   input: {
     borderColor: "gray",

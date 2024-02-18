@@ -35,7 +35,5 @@ const styles = StyleSheet.create({
     fontSize: 24
   }
 });
-
-
  
 export default DashboardPage;
