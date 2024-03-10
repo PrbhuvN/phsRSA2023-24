@@ -6,7 +6,7 @@ import AuthPage from './OtherPages/AuthPage';
 import DashboardPage from './OtherPages/DashboardPage';
 
 const Stack = createStackNavigator();
- 
+
 class App extends React.Component {
 
     constructor(props) {
@@ -18,12 +18,13 @@ class App extends React.Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName='Authentication'>
             <Stack.Screen
-              name='Authentication'
-              component={AuthPage}
-            />
-            <Stack.Screen
               name='Dashboard'
               component={DashboardPage}
+              
+            />
+            <Stack.Screen
+              name='Authentication'
+              component={AuthPage}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
