@@ -12,10 +12,14 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TextInput,
+  StyleSheet
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function App(): React.JSX.Element {
+export default function App(){
+  const [text, onChangeText] = React.useState('Useless Text');
+  const [number, onChangeNumber] = React.useState('');
   return (
     <SafeAreaView>
       <ScrollView
@@ -124,88 +128,24 @@ export default function App(): React.JSX.Element {
               Food Request
             </Text>
             <ImageBackground
-              style={{
-                width: '94.04%',
-                height: '43.64%',
-                position: 'absolute',
-                top: '56.72%',
-                left: '4.4%',
-                zIndex: 2,
-              }}
-              source={require('./assets/images/96d00f40-66bf-4449-a0bc-914fead9eb31.png')}
-            >
-              <Text
-                style={{
-                  display: 'flex',
-                  height: '38.97%',
-                  justifyContent: 'flex-start',
-                  alignItems: 'flex-start',
-                  fontFamily: 'Poppins',
-                  fontSize: 14,
-                  fontWeight: '400',
-                  lineHeight: 21,
-                  color: '#1c1c1e',
-                  position: 'absolute',
-                  top: '33.3%',
-                  left: '2.47%',
-                  textAlign: 'left',
-                  zIndex: 3,
-                }}
-                numberOfLines={1}
-              >
-                Name
-              </Text>
-            </ImageBackground>
-          </View>
-          <ImageBackground
-            style={{
-              width: 365.8,
-              height: 60.524,
-              position: 'relative',
-              zIndex: 25,
-              marginTop: 38.797,
-              marginRight: 0,
-              marginBottom: 0,
-              marginLeft: 17.5,
-            }}
-            source={require('./assets/images/7f02741a-6a9a-4db7-bc24-af6f9684cd57.png')}
-          >
-            <Text
-              style={{
-                display: 'flex',
-                height: '38.97%',
-                justifyContent: 'flex-start',
-                alignItems: 'flex-start',
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                fontWeight: '400',
-                lineHeight: 21,
-                color: '#1c1c1e',
-                position: 'absolute',
-                top: '30.57%',
-                left: '2.32%',
-                textAlign: 'left',
-                zIndex: 26,
-              }}
-              numberOfLines={1}
-            >
-              Address
-            </Text>
-          </ImageBackground>
-          <ImageBackground
             style={{
               width: 365.8,
               height: 60.524,
               position: 'relative',
               zIndex: 27,
-              marginTop: 29.476,
+              marginTop: "22%",
               marginRight: 0,
               marginBottom: 0,
               marginLeft: 16.5,
             }}
             source={require('./assets/images/857a83ba-9205-4e8e-822f-f65c1db3394d.png')}
           >
-            <Text
+            <TextInput
+            
+            onChangeText={onChangeNumber}
+            value={number}
+            placeholder="Name"
+            keyboardType="numeric"
               style={{
                 display: 'flex',
                 height: '39.65%',
@@ -221,11 +161,93 @@ export default function App(): React.JSX.Element {
                 left: '2.6%',
                 textAlign: 'left',
                 zIndex: 28,
+                
               }}
               numberOfLines={1}
-            >
-              Requested food
-            </Text>
+            />
+              
+            
+            
+          </ImageBackground>
+          </View>
+          <ImageBackground
+            style={{
+              width: 365.8,
+              height: 60.524,
+              position: 'relative',
+              zIndex: 25,
+              marginTop: 38.797,
+              marginRight: 0,
+              marginBottom: 0,
+              marginLeft: 17.5,
+            }}
+            source={require('./assets/images/7f02741a-6a9a-4db7-bc24-af6f9684cd57.png')}
+          >
+            <TextInput
+            
+            onChangeText={onChangeNumber}
+            value={number}
+            placeholder="Address"
+            keyboardType="numeric"
+              style={{
+                display: 'flex',
+                height: '39.65%',
+                justifyContent: 'flex-start',
+                alignItems: 'flex-start',
+                fontFamily: 'Poppins',
+                fontSize: 14,
+                fontWeight: '400',
+                lineHeight: 21,
+                color: '#1c1c1e',
+                position: 'absolute',
+                top: '32.22%',
+                left: '2.6%',
+                textAlign: 'left',
+                zIndex: 28,
+                
+              }}
+              numberOfLines={1}
+            />
+          </ImageBackground>
+          
+          <ImageBackground
+            style={{
+              width: 365.8,
+              height: 60.524,
+              position: 'relative',
+              zIndex: 27,
+              marginTop: 29.476,
+              marginRight: 0,
+              marginBottom: 0,
+              marginLeft: 16.5,
+            }}
+            source={require('./assets/images/857a83ba-9205-4e8e-822f-f65c1db3394d.png')}
+          >
+            <TextInput
+            
+            onChangeText={onChangeNumber}
+            value={String}
+            placeholder="Requested Food"
+            keyboardType="ascii-capable"
+              style={{
+                display: 'flex',
+                height: '39.65%',
+                justifyContent: 'flex-start',
+                alignItems: 'flex-start',
+                fontFamily: 'Poppins',
+                fontSize: 14,
+                fontWeight: '400',
+                lineHeight: 21,
+                color: '#1c1c1e',
+                position: 'absolute',
+                top: '32.22%',
+                left: '2.6%',
+                textAlign: 'left',
+                zIndex: 28,
+                
+              }}
+              numberOfLines={1}
+            />
           </ImageBackground>
           <Text
             style={{

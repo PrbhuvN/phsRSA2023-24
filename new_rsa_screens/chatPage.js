@@ -25,7 +25,7 @@ export default function App(){
         <View
           style={{
             width: 400,
-            height: 812,
+            height: 'auto',
             position: 'relative',
             overflow: 'hidden',
             marginTop: 0,
