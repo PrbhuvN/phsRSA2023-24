@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-class DriverLogin extends React.Component {
+class DonorPortal extends React.Component {
 
   constructor(props) {
     super(props);
@@ -64,25 +64,21 @@ class DriverLogin extends React.Component {
                   marginBottom: 0,
                   marginLeft: 8.349,
                 }}
-                source={require('./../../assets/images/511aaa46-d4cf-4b92-8be9-371840bff8a3.png')}
+                source={require('./../../assets/images/7f9e9b3e-0bd5-4b79-87c0-9f1885a8409a.png')}
               />
             </View>
             <Text
               style={{
-                display: 'flex',
-                width: 234.667,
                 height: 43.826,
-                justifyContent: 'center',
-                alignItems: 'flex-start',
                 fontFamily: 'Poppins',
                 fontSize: 24,
                 fontWeight: '700',
                 lineHeight: 36,
                 color: '#030303',
                 position: 'relative',
-                textAlign: 'center',
-                zIndex: 8,
-                marginTop: 0,
+                textAlign: 'left',
+                zIndex: 6,
+                marginTop: 6,
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 83,
@@ -91,40 +87,16 @@ class DriverLogin extends React.Component {
             >
               GreenCornucopia
             </Text>
-            <Text
-              style={{
-                display: 'flex',
-                width: 234.667,
-                height: 29.826,
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                fontFamily: 'Poppins',
-                fontSize: 15,
-                fontWeight: '400',
-                lineHeight: 22.5,
-                color: '#030303',
-                position: 'relative',
-                textAlign: 'center',
-                zIndex: 11,
-                marginTop: -5.826,
-                marginRight: 0,
-                marginBottom: 0,
-                marginLeft: 83,
-              }}
-              numberOfLines={1}
-            >
-              Delivery Driver Login
-            </Text>
             <ImageBackground
               style={{
-                width: 104,
-                height: 119,
+                width: 142,
+                height: 163,
                 position: 'relative',
                 zIndex: 19,
-                marginTop: 23.174,
+                marginTop: 8.174,
                 marginRight: 0,
                 marginBottom: 0,
-                marginLeft: 148,
+                marginLeft: 129,
               }}
               source={require('./../../assets/images/e930316539a719bb240a81b09af1877d699fdd2a.png')}
               resizeMode='cover'
@@ -135,7 +107,7 @@ class DriverLogin extends React.Component {
                 height: 34.087,
                 position: 'relative',
                 zIndex: 14,
-                marginTop: 80,
+                marginTop: 69,
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: -47,
@@ -234,13 +206,13 @@ class DriverLogin extends React.Component {
                 width: 297.6,
                 height: 37.393,
                 position: 'relative',
-                zIndex: 4,
+                zIndex: 2,
                 marginTop: 66.261,
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 51,
               }}
-              source={require('./../../assets/images/3f37f61b-d493-4a52-8ee1-b0f76a76a03c.png')}
+              source={require('./../../assets/images/b824bafd-9e57-4d35-b5b6-860d661da878.png')}
             >
               <Text
                 style={{
@@ -258,7 +230,7 @@ class DriverLogin extends React.Component {
                   top: '19.71%',
                   left: '40.86%',
                   textAlign: 'center',
-                  zIndex: 5,
+                  zIndex: 3,
                 }}
                 numberOfLines={1}
               >
@@ -267,106 +239,133 @@ class DriverLogin extends React.Component {
             </ImageBackground>
             <View
               style={{
-                width: 306,
-                height: 121.739,
+                width: 233.6,
+                height: 136.13,
                 position: 'relative',
-                zIndex: 21,
+                zIndex: 12,
                 marginTop: -6.436,
                 marginRight: 0,
                 marginBottom: 0,
-                marginLeft: 47,
+                marginLeft: 80,
               }}
             >
               <View
                 style={{
-                  width: '34.86%',
-                  height: '100%',
+                  width: '45.66%',
+                  height: '89.43%',
                   position: 'absolute',
                   top: 0,
-                  left: '17.41%',
+                  left: '8.68%',
                   overflow: 'hidden',
-                  zIndex: 12,
+                  zIndex: 10,
                 }}
               />
               <Text
                 style={{
-                  display: 'flex',
-                  height: '19.71%',
-                  justifyContent: 'flex-start',
-                  alignItems: 'flex-start',
+                  width: '94.98%',
+                  height: '17.89%',
                   fontFamily: 'Poppins',
                   fontSize: 13,
                   fontWeight: '400',
                   lineHeight: 19.5,
-                  color: '#000000',
                   position: 'absolute',
-                  top: '26.32%',
-                  left: 0,
+                  top: '23.54%',
+                  left: '3.85%',
                   textAlign: 'left',
-                  zIndex: 20,
+                  zIndex: 11,
                 }}
-                numberOfLines={1}
               >
-                Not a Delivery Driver?&nbsp;
+                <Text
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    fontWeight: '400',
+                    lineHeight: 19.5,
+                    color: '#000000',
+                    position: 'relative',
+                    textAlign: 'left',
+                  }}
+                >
+                  Don’t have an account?&nbsp;
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    fontWeight: '600',
+                    lineHeight: 19.5,
+                    color: '#004bbc',
+                    position: 'relative',
+                    textAlign: 'left',
+                  }}
+                >
+                  Sign up
+                </Text>
+              </Text>
+              <Text
+                style={{
+                  width: '94.98%',
+                  height: '17.89%',
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontWeight: '400',
+                  lineHeight: 19.5,
+                  position: 'absolute',
+                  top: '23.54%',
+                  left: '3.85%',
+                  textAlign: 'left',
+                  zIndex: 12,
+                }}
+              >
+                <Text
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    fontWeight: '400',
+                    lineHeight: 19.5,
+                    color: '#000000',
+                    position: 'relative',
+                    textAlign: 'left',
+                  }}
+                >
+                  Don’t have an account?&nbsp;
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    fontWeight: '600',
+                    lineHeight: 19.5,
+                    color: '#004bbc',
+                    position: 'relative',
+                    textAlign: 'left',
+                  }}
+                >
+                  Sign up
+                </Text>
               </Text>
               <Text
                 style={{
                   display: 'flex',
-                  height: '19.71%',
-                  justifyContent: 'flex-start',
+                  width: 233.6,
+                  height: '30.92%',
+                  justifyContent: 'center',
                   alignItems: 'flex-start',
                   fontFamily: 'Poppins',
-                  fontSize: 13,
-                  fontWeight: '600',
-                  lineHeight: 19.5,
-                  color: '#0c40f9',
+                  fontSize: 16,
+                  fontWeight: '400',
+                  lineHeight: 24,
+                  color: '#1c1c1e',
                   position: 'absolute',
-                  top: '26.32%',
-                  left: '47.06%',
-                  textAlign: 'left',
-                  zIndex: 21,
+                  top: '69.08%',
+                  left: 0,
+                  textAlign: 'center',
+                  zIndex: 9,
                 }}
-                numberOfLines={1}
               >
-                Sign up and Get Verified
+                Connect and Share Surplus{'\n'}Food
               </Text>
             </View>
-            <ImageBackground
-              style={{
-                width: 297.6,
-                height: 52.682,
-                position: 'relative',
-                marginTop: 4319.304,
-                marginRight: 0,
-                marginBottom: 0,
-                marginLeft: 1459,
-              }}
-              source={require('./../../assets/images/a105f3f5-9bc3-4cf2-8344-5105c9a05a35.png')}
-            />
-            <Text
-              style={{
-                display: 'flex',
-                width: 259,
-                height: 16,
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                fontWeight: '400',
-                lineHeight: 16,
-                color: '#ffffff',
-                position: 'relative',
-                textAlign: 'center',
-                zIndex: 1,
-                marginTop: 47.318,
-                marginRight: 0,
-                marginBottom: 0,
-                marginLeft: 1241,
-              }}
-              numberOfLines={1}
-            >
-              Request Account Creation
-            </Text>
             <ImageBackground
               style={{
                 width: '100%',
@@ -374,9 +373,8 @@ class DriverLogin extends React.Component {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                zIndex: 2,
               }}
-              source={require('./../../assets/images/e5b20bec-3b85-4213-ab2a-7356e6903acb.png')}
+              source={require('./../../assets/images/f4cc22de-6fa0-45cc-9bad-5fa20254f9b2.png')}
             />
           </View>
         </ScrollView>
@@ -385,4 +383,4 @@ class DriverLogin extends React.Component {
   }
 }
 
-export default DriverLogin
+export default DonorPortal

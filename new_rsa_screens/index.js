@@ -1,5 +1,5 @@
 import { AppRegistry, Platform } from 'react-native';
-import App from './foodRequestInfo';
+import App from './App.js';
 
 AppRegistry.registerComponent('main', () => App);
 
