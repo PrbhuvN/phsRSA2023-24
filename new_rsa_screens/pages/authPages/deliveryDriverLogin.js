@@ -1,10 +1,3 @@
-/**
- * Codia React Native App
- * https://codia.ai
- * https://github.com/facebook/react-native
- *
- * @format
- */
 import React from 'react';
 import {
   View,
@@ -12,6 +5,9 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -20,6 +16,15 @@ class DriverLogin extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  handleLogin = () => {
+    this.props.navigation.navigate('Driver Navigation');
+  };
+
+  handleSignUp = () => {
+    // change me later
+    this.props.navigation.navigate('Driver Navigation');
+  };
 
   render() {
     return (
@@ -53,6 +58,7 @@ class DriverLogin extends React.Component {
                 marginLeft: 23,
               }}
             >
+              <TouchableOpacity>
               <ImageBackground
                 style={{
                   width: 11.303,
@@ -66,6 +72,7 @@ class DriverLogin extends React.Component {
                 }}
                 source={require('./../../assets/images/511aaa46-d4cf-4b92-8be9-371840bff8a3.png')}
               />
+              </TouchableOpacity>
             </View>
             <Text
               style={{
@@ -156,6 +163,7 @@ class DriverLogin extends React.Component {
                   zIndex: 13,
                 }}
               />
+              
               <Text
                 style={{
                   display: 'flex',
@@ -178,6 +186,22 @@ class DriverLogin extends React.Component {
               >
                 Email:
               </Text>
+              <TextInput
+                style={{
+                  width: '60%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: 0,
+                  left: '40%',
+                  zIndex: 15,
+                  paddingLeft: 10,
+                }}
+                placeholder="Enter your email"
+                placeholderTextColor="#000000"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
+              />
             </View>
             <View
               style={{
@@ -228,6 +252,22 @@ class DriverLogin extends React.Component {
               >
                 Password:
               </Text>
+              <TextInput
+                style={{
+                  width: '60%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: 0,
+                  left: '40%',
+                  zIndex: 17,
+                  paddingLeft: 10,
+                }}
+                placeholder="Enter your password"
+                placeholderTextColor="#000000"
+                secureTextEntry={true}
+                autoCapitalize="none"
+                autoCorrect={false}
+              />
             </View>
             <ImageBackground
               style={{
@@ -242,28 +282,28 @@ class DriverLogin extends React.Component {
               }}
               source={require('./../../assets/images/3f37f61b-d493-4a52-8ee1-b0f76a76a03c.png')}
             >
-              <Text
+              <TouchableOpacity
                 style={{
-                  display: 'flex',
-                  width: '16.49%',
-                  height: '58.6%',
+                  width: '100%',
+                  height: '100%',
                   justifyContent: 'center',
-                  alignItems: 'flex-start',
-                  fontFamily: 'Poppins',
-                  fontSize: 14,
-                  fontWeight: '400',
-                  lineHeight: 21,
-                  color: '#ffffff',
-                  position: 'absolute',
-                  top: '19.71%',
-                  left: '40.86%',
-                  textAlign: 'center',
-                  zIndex: 5,
+                  alignItems: 'center',
                 }}
-                numberOfLines={1}
+                onPress={this.handleLogin}
               >
-                Login
-              </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                    fontWeight: '400',
+                    lineHeight: 21,
+                    color: '#ffffff',
+                  }}
+                  numberOfLines={1}
+                >
+                  Login
+                </Text>
+              </TouchableOpacity>
             </ImageBackground>
             <View
               style={{
@@ -309,34 +349,37 @@ class DriverLogin extends React.Component {
               >
                 Not a Delivery Driver?&nbsp;
               </Text>
-              <Text
-                style={{
-                  display: 'flex',
-                  height: '19.71%',
-                  justifyContent: 'flex-start',
-                  alignItems: 'flex-start',
-                  fontFamily: 'Poppins',
-                  fontSize: 13,
-                  fontWeight: '600',
-                  lineHeight: 19.5,
-                  color: '#0c40f9',
-                  position: 'absolute',
-                  top: '26.32%',
-                  left: '47.06%',
-                  textAlign: 'left',
-                  zIndex: 21,
-                }}
-                numberOfLines={1}
-              >
-                Sign up and Get Verified
-              </Text>
+              <TouchableOpacity onPress={this.handleSignUp}>
+                <Text
+                  style={{
+                    display: 'flex',
+                    height: '19.71%',
+                    justifyContent: 'flex-start',
+                    alignItems: 'flex-start',
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    fontWeight: '600',
+                    lineHeight: 19.5,
+                    color: '#0c40f9',
+                    position: 'absolute',
+                    top: '26.32%',
+                    left: '47.06%',
+                    textAlign: 'left',
+                    zIndex: 21,
+                  }}
+                  numberOfLines={1}
+                >
+                  Sign up and Get Verified
+                </Text>
+              </TouchableOpacity>
             </View>
             <ImageBackground
               style={{
                 width: 297.6,
                 height: 52.682,
                 position: 'relative',
-                marginTop: 4319.304,
+                zIndex: 5, // changed zIndex from 1 to 5
+                marginTop: 0, // changed marginTop from 4319.304 to 0
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 1459,
@@ -385,4 +428,4 @@ class DriverLogin extends React.Component {
   }
 }
 
-export default DriverLogin
+export default DriverLogin;

@@ -12,6 +12,7 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -20,6 +21,10 @@ class DonorPortal extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  handleSignUp = () => {
+    this.props.navigation.navigate('Welcome Page');
+  };
 
   render() {
     return (
@@ -53,6 +58,7 @@ class DonorPortal extends React.Component {
                 marginLeft: 23,
               }}
             >
+              <TouchableOpacity>
               <ImageBackground
                 style={{
                   width: 11.303,
@@ -66,6 +72,7 @@ class DonorPortal extends React.Component {
                 }}
                 source={require('./../../assets/images/7f9e9b3e-0bd5-4b79-87c0-9f1885a8409a.png')}
               />
+              </TouchableOpacity>
             </View>
             <Text
               style={{
@@ -214,6 +221,15 @@ class DonorPortal extends React.Component {
               }}
               source={require('./../../assets/images/b824bafd-9e57-4d35-b5b6-860d661da878.png')}
             >
+              <TouchableOpacity
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={this.handleLogin}
+              >
               <Text
                 style={{
                   display: 'flex',
@@ -236,6 +252,7 @@ class DonorPortal extends React.Component {
               >
                 Login
               </Text>
+              </TouchableOpacity>
             </ImageBackground>
             <View
               style={{

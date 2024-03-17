@@ -1,17 +1,11 @@
-/**
- * Codia React Native App
- * https://codia.ai
- * https://github.com/facebook/react-native
- *
- * @format
- */
-import React from 'react';
+import React, {useState } from "react";
 import {
   View,
   Text,
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TextInput,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -20,9 +14,14 @@ class DonorSignup extends React.Component {
   constructor(props) {
     super(props);
   }
+  
+  handleSignUp = () => {
+    this.props.navigation.navigate('Driver Navigation');
+  };
 
   render() {
     return (
+      
       <SafeAreaView>
         <ScrollView
           scrollEnabled={true}
@@ -225,7 +224,7 @@ class DonorSignup extends React.Component {
                 zIndex: 10,
               }}
             />
-            <Text
+            <TextInput
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -246,7 +245,8 @@ class DonorSignup extends React.Component {
               numberOfLines={1}
             >
               First Name
-            </Text>
+            </TextInput>
+            
             <View
               style={{
                 width: '75.75%',

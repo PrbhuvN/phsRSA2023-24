@@ -12,6 +12,8 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity,
+  Touchable
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -53,6 +55,7 @@ class ReviewPage extends React.Component {
                 marginLeft: 23,
               }}
             >
+              <TouchableOpacity>
               <ImageBackground
                 style={{
                   width: 11.303,
@@ -66,6 +69,7 @@ class ReviewPage extends React.Component {
                 }}
                 source={require('./../../assets/images/7c91e4f4-ae1a-49a1-88e1-ad210098d597.png')}
               />
+              </TouchableOpacity>
             </View>
             <Text
               style={{

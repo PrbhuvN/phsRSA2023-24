@@ -15,14 +15,10 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-class WelcomePage extends React.Component {
+class DonatorMainPage extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  gotoRequest = () => {
-    this.props.navigation.navigate('Requester Navigation');
-  };
 
   render() {
     return (
@@ -52,7 +48,7 @@ class WelcomePage extends React.Component {
                 marginBottom: 0,
                 marginLeft: 0,
               }}
-              source={require('./../assets/images/0bc50c50-293c-4ab8-a4d7-b2fcbc49fc91.png')}>
+              source={require('./../../assets/images/b67e07f9-7c68-4cfa-9fc7-06efee2d0111.png')}>
               <Text
                 style={{
                   height: 36,
@@ -63,7 +59,7 @@ class WelcomePage extends React.Component {
                   color: '#030303',
                   position: 'relative',
                   textAlign: 'left',
-                  zIndex: 26,
+                  zIndex: 18,
                   marginTop: 159,
                   marginRight: 0,
                   marginBottom: 0,
@@ -82,7 +78,7 @@ class WelcomePage extends React.Component {
                   alignItems: 'center',
                   position: 'relative',
                   zIndex: 11,
-                  marginTop: 58,
+                  marginTop: 124,
                   marginRight: 0,
                   marginBottom: 0,
                   marginLeft: 35,
@@ -95,7 +91,7 @@ class WelcomePage extends React.Component {
                     position: 'relative',
                     zIndex: 3,
                   }}
-                  source={require('./../assets/images/db07b773-7648-4e9b-b001-e5646bb5e8fa.png')}>
+                  source={require('./../../assets/images/a4395b98-1cf9-4bd7-8b55-87f5b8d9d1e2.png')}>
                   <ImageBackground
                     style={{
                       width: 98,
@@ -107,7 +103,7 @@ class WelcomePage extends React.Component {
                       marginBottom: 0,
                       marginLeft: 25.5,
                     }}
-                    source={require('./../assets/images/4a561c3c-51fd-4355-a27f-c30ae23d6eb4.png')}>
+                    source={require('./../../assets/images/417ad53a-04fb-4be7-a322-600608d76b75.png')}>
                     <View
                       style={{
                         width: 61.392,
@@ -131,19 +127,10 @@ class WelcomePage extends React.Component {
                           marginBottom: 0,
                           marginLeft: 3.814,
                         }}
-                        source={require('./../assets/images/656bc1af-bdd5-4438-adad-deeec4bf1df9.png')}
+                        source={require('./../../assets/images/16150282-b0cd-489b-9905-4118f87d1594.png')}
                       />
                     </View>
                   </ImageBackground>
-                  <TouchableOpacity
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-                onPress={this.gotoRequest}
-              >
                   <Text
                     style={{
                       height: 26.274,
@@ -163,7 +150,6 @@ class WelcomePage extends React.Component {
                     numberOfLines={1}>
                     Request
                   </Text>
-                  </TouchableOpacity>
                 </ImageBackground>
                 <ImageBackground
                   style={{
@@ -173,7 +159,7 @@ class WelcomePage extends React.Component {
                     position: 'relative',
                     zIndex: 11,
                   }}
-                  source={require('./../assets/images/9f30fdb5-6b06-467b-bd98-5c0fce20b498.png')}>
+                  source={require('./../../assets/images/48ffc4bd-e349-47fa-9e52-a72371b4e985.png')}>
                   <ImageBackground
                     style={{
                       width: 98,
@@ -185,7 +171,7 @@ class WelcomePage extends React.Component {
                       marginBottom: 0,
                       marginLeft: 31.367,
                     }}
-                    source={require('./../assets/images/78bec720-9ef2-4e8b-9247-ef8cf82d17c9.png')}>
+                    source={require('./../../assets/images/4e3a0043-1888-491b-8d35-5029216317e2.png')}>
                     <View
                       style={{
                         width: 62.035,
@@ -209,7 +195,7 @@ class WelcomePage extends React.Component {
                           marginBottom: 0,
                           marginLeft: 3.877,
                         }}
-                        source={require('./../assets/images/11945dcd-c44a-4ba8-a019-ed5a3e45f02e.png')}
+                        source={require('./../../assets/images/f2f8e7de-04cf-47a4-8ffc-11781302e667.png')}
                       />
                     </View>
                   </ImageBackground>
@@ -234,82 +220,13 @@ class WelcomePage extends React.Component {
                   </Text>
                 </ImageBackground>
               </View>
-              <ImageBackground
-                style={{
-                  width: 148.267,
-                  height: 173.911,
-                  position: 'relative',
-                  zIndex: 19,
-                  marginTop: 27.089,
-                  marginRight: 0,
-                  marginBottom: 0,
-                  marginLeft: 123,
-                }}
-                source={require('./../assets/images/a52698e9-2bff-49b7-b7da-d202079e477c.png')}>
-                <ImageBackground
-                  style={{
-                    width: 98,
-                    height: 93,
-                    position: 'relative',
-                    zIndex: 23,
-                    marginTop: 19.5,
-                    marginRight: 0,
-                    marginBottom: 0,
-                    marginLeft: 24.5,
-                  }}
-                  source={require('./../assets/images/35b359b1-396f-4a77-8adb-4839ed0348f0.png')}>
-                  <View
-                    style={{
-                      width: 61.392,
-                      height: 58.228,
-                      position: 'relative',
-                      overflow: 'hidden',
-                      zIndex: 24,
-                      marginTop: 17.386,
-                      marginRight: 0,
-                      marginBottom: 0,
-                      marginLeft: 18.304,
-                    }}>
-                    <ImageBackground
-                      style={{
-                        width: '100%',
-                        height: '100.01%',
-                        position: 'absolute',
-                        top: 0,
-                        left: '0%',
-                        zIndex: 25,
-                      }}
-                      source={require('./../assets/images/5c30c2d1-a487-4b9f-a4fd-34addf39b249.png')}
-                    />
-                  </View>
-                </ImageBackground>
-                <Text
-                  style={{
-                    height: 26.274,
-                    fontFamily: 'Poppins',
-                    fontSize: 14,
-                    fontWeight: '400',
-                    lineHeight: 21,
-                    color: '#030303',
-                    position: 'relative',
-                    textAlign: 'left',
-                    zIndex: 21,
-                    marginTop: 21.5,
-                    marginRight: 0,
-                    marginBottom: 0,
-                    marginLeft: 48,
-                  }}
-                  numberOfLines={1}>
-                  Deliver
-                </Text>
-              </ImageBackground>
               <View
                 style={{
                   width: 333.2,
                   height: 45,
                   position: 'relative',
-                  zIndex: 39,
-                  marginTop: 126.154,
+                  zIndex: 31,
+                  marginTop: 261.154,
                   marginRight: 0,
                   marginBottom: 0,
                   marginLeft: 44.333,
@@ -321,16 +238,16 @@ class WelcomePage extends React.Component {
                     position: 'absolute',
                     top: 0,
                     left: '42.02%',
-                    zIndex: 32,
+                    zIndex: 24,
                   }}
-                  source={require('./../assets/images/89fe0b11-8a45-4872-8bc5-16b971726c3d.png')}>
+                  source={require('./../../assets/images/1a4cfcfa-9df8-4948-969b-f59094195280.png')}>
                   <View
                     style={{
                       width: 15,
                       height: 16,
                       position: 'relative',
                       overflow: 'hidden',
-                      zIndex: 33,
+                      zIndex: 25,
                       marginTop: 14,
                       marginRight: 0,
                       marginBottom: 0,
@@ -341,13 +258,13 @@ class WelcomePage extends React.Component {
                         width: 13.125,
                         height: 14,
                         position: 'relative',
-                        zIndex: 34,
+                        zIndex: 26,
                         marginTop: 1,
                         marginRight: 0,
                         marginBottom: 0,
                         marginLeft: 0.94,
                       }}
-                      source={require('./../assets/images/b2bf878b-69a0-4ccc-a0f3-be491088a261.png')}
+                      source={require('./../../assets/images/0698c35c-7c46-40b5-b0f4-e7cff4663035.png')}
                     />
                   </View>
                 </ImageBackground>
@@ -359,9 +276,9 @@ class WelcomePage extends React.Component {
                     top: '26.67%',
                     left: 0,
                     overflow: 'hidden',
-                    zIndex: 30,
+                    zIndex: 22,
                   }}
-                  source={require('./../assets/images/243c3b2b-03a7-4c79-803f-3503300cb756.png')}
+                  source={require('./../../assets/images/918ea7d3-1033-4e30-8532-d61be032bb87.png')}
                 />
                 <View
                   style={{
@@ -371,20 +288,20 @@ class WelcomePage extends React.Component {
                     top: '26.67%',
                     left: '21.01%',
                     overflow: 'hidden',
-                    zIndex: 39,
+                    zIndex: 31,
                   }}>
                   <ImageBackground
                     style={{
                       width: 19.999,
                       height: 20.002,
                       position: 'relative',
-                      zIndex: 40,
+                      zIndex: 32,
                       marginTop: 0,
                       marginRight: 0,
                       marginBottom: 0,
                       marginLeft: 0,
                     }}
-                    source={require('./../assets/images/ee9c6fa5-0847-415c-860b-4c416fdc4e4c.png')}
+                    source={require('./../../assets/images/4b0a1d7e-c980-4cf8-88ef-dc0542e15c38.png')}
                   />
                 </View>
                 <View
@@ -395,20 +312,20 @@ class WelcomePage extends React.Component {
                     top: '26.67%',
                     left: '72.03%',
                     overflow: 'hidden',
-                    zIndex: 28,
+                    zIndex: 20,
                   }}>
                   <ImageBackground
                     style={{
                       width: 19.2,
                       height: 18.017,
                       position: 'relative',
-                      zIndex: 29,
+                      zIndex: 21,
                       marginTop: 2.252,
                       marginRight: 0,
                       marginBottom: 0,
                       marginLeft: 0,
                     }}
-                    source={require('./../assets/images/0a1a6dce-6539-44ae-b9e1-46bdff0674d5.png')}
+                    source={require('./../../assets/images/3a4c0375-dbd5-4644-902a-e2b4c2a57bfc.png')}
                   />
                 </View>
                 <View
@@ -419,7 +336,7 @@ class WelcomePage extends React.Component {
                     top: '26.67%',
                     left: '94.24%',
                     overflow: 'hidden',
-                    zIndex: 35,
+                    zIndex: 27,
                   }}>
                   <View
                     style={{
@@ -429,20 +346,20 @@ class WelcomePage extends React.Component {
                       top: '-0.29%',
                       left: '-1.74%',
                       overflow: 'hidden',
-                      zIndex: 37,
+                      zIndex: 29,
                     }}>
                     <ImageBackground
                       style={{
                         width: 17.5,
                         height: 19.999,
                         position: 'relative',
-                        zIndex: 38,
+                        zIndex: 30,
                         marginTop: 0,
                         marginRight: 0,
                         marginBottom: 0,
                         marginLeft: 1.25,
                       }}
-                      source={require('./../assets/images/0b6f69f2-1210-4181-a512-61883267a849.png')}
+                      source={require('./../../assets/images/675f44ca-4f87-4210-bc1a-7fcd099fb38d.png')}
                     />
                   </View>
                   <ImageBackground
@@ -452,35 +369,13 @@ class WelcomePage extends React.Component {
                       position: 'absolute',
                       top: 0,
                       left: '6.25%',
-                      zIndex: 36,
+                      zIndex: 28,
                     }}
-                    source={require('./../assets/images/dca404f8-750c-4d7e-9ced-6cc1b9043e85.png')}
+                    source={require('./../../assets/images/ecfaded8-39c6-4be9-bb84-e7f0f9d35625.png')}
                   />
                 </View>
               </View>
             </ImageBackground>
-            <ImageBackground
-              style={{
-                width: '100%',
-                height: '100%',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                zIndex: 1,
-              }}
-              source={require('./../assets/images/236bd16d-ccb3-40fc-afcf-1a2130eef73e.png')}
-            />
-            <ImageBackground
-              style={{
-                width: '100%',
-                height: '8.63%',
-                position: 'absolute',
-                top: '91.38%',
-                left: 0,
-                zIndex: 27,
-              }}
-              source={require('./../assets/images/06a80fce-86a3-45de-b2e8-536480664ea1.png')}
-            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -488,4 +383,4 @@ class WelcomePage extends React.Component {
   }
 }
 
-export default WelcomePage;
+export default DonatorMainPage;

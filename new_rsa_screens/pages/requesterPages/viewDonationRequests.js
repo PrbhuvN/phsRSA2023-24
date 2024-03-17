@@ -15,7 +15,13 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function App(){
+class ViewRequests extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
   return (
     <SafeAreaView>
       <ScrollView
@@ -122,7 +128,7 @@ export default function App(){
                 left: '-1.02%',
                 zIndex: 22,
               }}
-              source={require('./assets/images/d4c9a12d-c607-4ba1-8a4d-adce8609d513.png')}
+              source={require('./../../assets/images/d4c9a12d-c607-4ba1-8a4d-adce8609d513.png')}
             />
           </View>
           <ImageBackground
@@ -136,7 +142,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 20,
             }}
-            source={require('./assets/images/26bab728-d059-4e22-9356-df66939358ef.png')}
+            source={require('./../../assets/images/26bab728-d059-4e22-9356-df66939358ef.png')}
           >
             <ImageBackground
               style={{
@@ -147,7 +153,7 @@ export default function App(){
                 left: '61.6%',
                 zIndex: 41,
               }}
-              source={require('./assets/images/f0714610-f338-4032-a3bd-5536cdb8c827.png')}
+              source={require('./../../assets/images/f0714610-f338-4032-a3bd-5536cdb8c827.png')}
             >
               <ImageBackground
                 style={{
@@ -158,7 +164,7 @@ export default function App(){
                   left: '-3.13%',
                   zIndex: 43,
                 }}
-                source={require('./assets/images/df38ce8b-f54f-41cb-9b5d-8d51c8f49ba9.png')}
+                source={require('./../../assets/images/df38ce8b-f54f-41cb-9b5d-8d51c8f49ba9.png')}
               />
             </ImageBackground>
             <ImageBackground
@@ -170,7 +176,7 @@ export default function App(){
                 left: '94.2%',
                 zIndex: 31,
               }}
-              source={require('./assets/images/b71a67ca-917a-40d6-b9af-f0dbedc711e8.png')}
+              source={require('./../../assets/images/b71a67ca-917a-40d6-b9af-f0dbedc711e8.png')}
             />
             <Text
               style={{
@@ -223,7 +229,7 @@ export default function App(){
                 left: '65.47%',
                 zIndex: 32,
               }}
-              source={require('./assets/images/3f0eb259e014cdc93250787756b2504869bb4195.png')}
+              source={require('./../../assets/images/3f0eb259e014cdc93250787756b2504869bb4195.png')}
               resizeMode='cover'
             />
             <Text
@@ -271,7 +277,7 @@ export default function App(){
                 left: 0,
                 zIndex: 34,
               }}
-              source={require('./assets/images/9651d167-af40-45de-b180-05abcdb20235.png')}
+              source={require('./../../assets/images/9651d167-af40-45de-b180-05abcdb20235.png')}
             >
               <ImageBackground
                 style={{
@@ -284,7 +290,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 341,
                 }}
-                source={require('./assets/images/aebe1ad1-696c-4544-b03f-eabc9cf69516.png')}
+                source={require('./../../assets/images/aebe1ad1-696c-4544-b03f-eabc9cf69516.png')}
               />
               <View
                 style={{
@@ -328,7 +334,7 @@ export default function App(){
                     left: '60.55%',
                     zIndex: 51,
                   }}
-                  source={require('./assets/images/12e07fb9-4295-4c10-b520-4c54f60f394a.png')}
+                  source={require('./../../assets/images/12e07fb9-4295-4c10-b520-4c54f60f394a.png')}
                 />
                 <Text
                   style={{
@@ -363,7 +369,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 206,
                 }}
-                source={require('./assets/images/c9afaa28-9287-4008-b05f-223daa20a7d1.png')}
+                source={require('./../../assets/images/c9afaa28-9287-4008-b05f-223daa20a7d1.png')}
               />
             </ImageBackground>
             <Text
@@ -400,7 +406,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 0,
             }}
-            source={require('./assets/images/0cab2479-3a5b-4077-8a26-1f7dc73d3baa.png')}
+            source={require('./../../assets/images/0cab2479-3a5b-4077-8a26-1f7dc73d3baa.png')}
           />
           <View
             style={{
@@ -423,7 +429,7 @@ export default function App(){
                 left: '42.02%',
                 zIndex: 6,
               }}
-              source={require('./assets/images/d78168f4-024d-4e8c-a3c5-cfc8696c7262.png')}
+              source={require('./../../assets/images/d78168f4-024d-4e8c-a3c5-cfc8696c7262.png')}
             >
               <View
                 style={{
@@ -449,7 +455,7 @@ export default function App(){
                     marginBottom: 0,
                     marginLeft: 0.94,
                   }}
-                  source={require('./assets/images/7b024f2c-7850-482e-9bd9-7e99c2bf34ff.png')}
+                  source={require('./../../assets/images/7b024f2c-7850-482e-9bd9-7e99c2bf34ff.png')}
                 />
               </View>
             </ImageBackground>
@@ -463,7 +469,7 @@ export default function App(){
                 overflow: 'hidden',
                 zIndex: 4,
               }}
-              source={require('./assets/images/26218ae5-08e1-46e4-85a9-cfc14b481697.png')}
+              source={require('./../../assets/images/26218ae5-08e1-46e4-85a9-cfc14b481697.png')}
             />
             <View
               style={{
@@ -487,7 +493,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 0,
                 }}
-                source={require('./assets/images/762f93e4-ce75-4f6c-aa24-6d9d1bf60db8.png')}
+                source={require('./../../assets/images/762f93e4-ce75-4f6c-aa24-6d9d1bf60db8.png')}
               />
             </View>
             <View
@@ -512,7 +518,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 0,
                 }}
-                source={require('./assets/images/d8a2fe13-ebbd-4b6a-a639-43812cc099d8.png')}
+                source={require('./../../assets/images/d8a2fe13-ebbd-4b6a-a639-43812cc099d8.png')}
               />
             </View>
             <View
@@ -548,7 +554,7 @@ export default function App(){
                     marginBottom: 0,
                     marginLeft: 1.25,
                   }}
-                  source={require('./assets/images/68133044-29ae-429c-81f5-101bd3b5a1be.png')}
+                  source={require('./../../assets/images/68133044-29ae-429c-81f5-101bd3b5a1be.png')}
                 />
               </View>
               <ImageBackground
@@ -560,7 +566,7 @@ export default function App(){
                   left: '6.25%',
                   zIndex: 10,
                 }}
-                source={require('./assets/images/d83e4e2c-6e94-4289-b1c6-b1a46e4f5d76.png')}
+                source={require('./../../assets/images/d83e4e2c-6e94-4289-b1c6-b1a46e4f5d76.png')}
               />
             </View>
           </View>
@@ -572,7 +578,7 @@ export default function App(){
               top: '-0.35%',
               left: 0,
             }}
-            source={require('./assets/images/0ca0017f-2cf1-4237-91fe-41ab406805b1.png')}
+            source={require('./../../assets/images/0ca0017f-2cf1-4237-91fe-41ab406805b1.png')}
           />
           <ImageBackground
             style={{
@@ -583,10 +589,13 @@ export default function App(){
               left: 0,
               zIndex: 1,
             }}
-            source={require('./assets/images/b607fa62-7d1a-45b4-9ade-90ab1d214776.png')}
+            source={require('./../../assets/images/b607fa62-7d1a-45b4-9ade-90ab1d214776.png')}
           />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+}
+
+export default ViewRequests

@@ -15,7 +15,12 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function App(){
+class RequestInfo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
   return (
     <SafeAreaView>
       <ScrollView
@@ -45,7 +50,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17.1,
             }}
-            source={require('./assets/images/54b7d633-f305-42ac-a60c-38bb91053280.png')}
+            source={require('./../../assets/images/54b7d633-f305-42ac-a60c-38bb91053280.png')}
           >
             <View
               style={{
@@ -71,7 +76,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 4.453,
                 }}
-                source={require('./assets/images/c10f6d90-526b-4a61-a1bc-45e2df18fefe.png')}
+                source={require('./../../assets/images/c10f6d90-526b-4a61-a1bc-45e2df18fefe.png')}
               />
             </View>
           </ImageBackground>
@@ -86,7 +91,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 125,
             }}
-            source={require('./assets/images/119f3371-abee-44c6-9eac-7e7af6b436b3.png')}
+            source={require('./../../assets/images/119f3371-abee-44c6-9eac-7e7af6b436b3.png')}
           />
           <Text
             style={{
@@ -139,7 +144,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17.067,
             }}
-            source={require('./assets/images/3e58baad-80be-4302-b09f-9dff53c2319f.png')}
+            source={require('./../../assets/images/3e58baad-80be-4302-b09f-9dff53c2319f.png')}
           />
           <Text
             style={{
@@ -172,7 +177,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17.067,
             }}
-            source={require('./assets/images/b3a325a6-e830-4a79-8c98-19f96582c79b.png')}
+            source={require('./../../assets/images/b3a325a6-e830-4a79-8c98-19f96582c79b.png')}
           />
           <Text
             style={{
@@ -228,7 +233,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 0,
                 }}
-                source={require('./assets/images/a39ec8ed-92a0-4ee2-a61d-eefbee4d92c9.png')}
+                source={require('./../../assets/images/a39ec8ed-92a0-4ee2-a61d-eefbee4d92c9.png')}
               />
             </View>
             <View
@@ -253,7 +258,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 4.116,
                 }}
-                source={require('./assets/images/1fea2506-5df0-47b0-acd1-3cf414fe68ab.png')}
+                source={require('./../../assets/images/1fea2506-5df0-47b0-acd1-3cf414fe68ab.png')}
               />
             </View>
             <Text
@@ -289,7 +294,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17.067,
             }}
-            source={require('./assets/images/4322f51f-d216-4e18-af0a-190272995439.png')}
+            source={require('./../../assets/images/4322f51f-d216-4e18-af0a-190272995439.png')}
           />
           <Text
             style={{
@@ -335,7 +340,7 @@ export default function App(){
                 marginBottom: 0,
                 marginLeft: 4.116,
               }}
-              source={require('./assets/images/e12ed963-2a5f-417d-a1bf-4da21abe7514.png')}
+              source={require('./../../assets/images/e12ed963-2a5f-417d-a1bf-4da21abe7514.png')}
             />
           </View>
           <Text
@@ -369,7 +374,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17.067,
             }}
-            source={require('./assets/images/5f97fd31-e2d3-4196-bec0-5577567f60ee.png')}
+            source={require('./../../assets/images/5f97fd31-e2d3-4196-bec0-5577567f60ee.png')}
           />
           <Text
             style={{
@@ -402,7 +407,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17.067,
             }}
-            source={require('./assets/images/460c5407-a853-493d-ae42-efcbce46e7f7.png')}
+            source={require('./../../assets/images/460c5407-a853-493d-ae42-efcbce46e7f7.png')}
           />
           <View
             style={{
@@ -425,7 +430,7 @@ export default function App(){
                 left: 0,
                 zIndex: 50,
               }}
-              source={require('./assets/images/399b0fc4-f4a7-4d53-b987-0c30a37c30bf.png')}
+              source={require('./../../assets/images/399b0fc4-f4a7-4d53-b987-0c30a37c30bf.png')}
             />
             <ImageBackground
               style={{
@@ -436,7 +441,7 @@ export default function App(){
                 left: '60.47%',
                 zIndex: 38,
               }}
-              source={require('./assets/images/b6057719-91a3-42d5-a86a-eece6b0b88a4.png')}
+              source={require('./../../assets/images/b6057719-91a3-42d5-a86a-eece6b0b88a4.png')}
             />
             <Text
               style={{
@@ -531,7 +536,7 @@ export default function App(){
                 left: '10.36%',
                 zIndex: 43,
               }}
-              source={require('./assets/images/74324e84-9d0f-4e0c-b7aa-5e6c7b7fbfb0.png')}
+              source={require('./../../assets/images/74324e84-9d0f-4e0c-b7aa-5e6c7b7fbfb0.png')}
             >
               <Text
                 style={{
@@ -569,7 +574,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 0,
             }}
-            source={require('./assets/images/e5de1f7d-1933-47ce-8b4a-172176079d30.png')}
+            source={require('./../../assets/images/e5de1f7d-1933-47ce-8b4a-172176079d30.png')}
           />
           <ImageBackground
             style={{
@@ -582,7 +587,7 @@ export default function App(){
               marginBottom: 0,
               marginLeft: 17,
             }}
-            source={require('./assets/images/f4f8b47e-dc52-4ed2-9ef7-a8f14a7d69a9.png')}
+            source={require('./../../assets/images/f4f8b47e-dc52-4ed2-9ef7-a8f14a7d69a9.png')}
           />
           <View
             style={{
@@ -605,7 +610,7 @@ export default function App(){
                 left: '42.14%',
                 zIndex: 62,
               }}
-              source={require('./assets/images/d787dc23-d519-409f-ba3f-4f17314e52e5.png')}
+              source={require('./../../assets/images/d787dc23-d519-409f-ba3f-4f17314e52e5.png')}
             >
               <View
                 style={{
@@ -631,7 +636,7 @@ export default function App(){
                     marginBottom: 0,
                     marginLeft: 0.94,
                   }}
-                  source={require('./assets/images/688315bc-278c-4c8d-a743-f1f7407b054d.png')}
+                  source={require('./../../assets/images/688315bc-278c-4c8d-a743-f1f7407b054d.png')}
                 />
               </View>
             </ImageBackground>
@@ -645,7 +650,7 @@ export default function App(){
                 overflow: 'hidden',
                 zIndex: 60,
               }}
-              source={require('./assets/images/72a23089-6a81-4b42-adfc-876ed1422e03.png')}
+              source={require('./../../assets/images/72a23089-6a81-4b42-adfc-876ed1422e03.png')}
             />
             <View
               style={{
@@ -669,7 +674,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 0,
                 }}
-                source={require('./assets/images/ec95c3a2-2fbf-4154-8432-052559c38f54.png')}
+                source={require('./../../assets/images/ec95c3a2-2fbf-4154-8432-052559c38f54.png')}
               />
             </View>
             <View
@@ -694,7 +699,7 @@ export default function App(){
                   marginBottom: 0,
                   marginLeft: 0,
                 }}
-                source={require('./assets/images/666cd499-19d5-4980-941b-8b1070ae34e1.png')}
+                source={require('./../../assets/images/666cd499-19d5-4980-941b-8b1070ae34e1.png')}
               />
             </View>
             <View
@@ -730,7 +735,7 @@ export default function App(){
                     marginBottom: 0,
                     marginLeft: 1.25,
                   }}
-                  source={require('./assets/images/aa3b1ba0-631a-4892-a786-d569156f696d.png')}
+                  source={require('./../../assets/images/aa3b1ba0-631a-4892-a786-d569156f696d.png')}
                 />
               </View>
               <ImageBackground
@@ -742,7 +747,7 @@ export default function App(){
                   left: '6.25%',
                   zIndex: 66,
                 }}
-                source={require('./assets/images/e2e1392e-5fc0-4536-90d3-aa5dbe68421c.png')}
+                source={require('./../../assets/images/e2e1392e-5fc0-4536-90d3-aa5dbe68421c.png')}
               />
             </View>
           </View>
@@ -754,7 +759,7 @@ export default function App(){
               top: 0,
               left: 0,
             }}
-            source={require('./assets/images/fb7637ae-4071-4a7b-8fba-aa31582d702e.png')}
+            source={require('./../../assets/images/fb7637ae-4071-4a7b-8fba-aa31582d702e.png')}
           />
           <ImageBackground
             style={{
@@ -765,10 +770,13 @@ export default function App(){
               left: 0,
               zIndex: 57,
             }}
-            source={require('./assets/images/92f75936-893d-4c0e-bab7-bbe655d68b32.png')}
+            source={require('./../../assets/images/92f75936-893d-4c0e-bab7-bbe655d68b32.png')}
           />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+}
+
+export default RequestInfo;

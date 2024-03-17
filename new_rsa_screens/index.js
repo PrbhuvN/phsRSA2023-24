@@ -1,5 +1,5 @@
 import { AppRegistry, Platform } from 'react-native';
-import App from './App.js';
+import App from './pages/authPages/donorSignup.js';
 
 AppRegistry.registerComponent('main', () => App);
 

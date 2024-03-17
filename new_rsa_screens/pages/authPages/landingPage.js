@@ -1,10 +1,3 @@
-/**
- * Codia React Native App
- * https://codia.ai
- * https://github.com/facebook/react-native
- *
- * @format
- */
 import React from 'react';
 import {
   View,
@@ -12,6 +5,7 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -20,6 +14,16 @@ class LandingPage extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  handleDonorRecipientPress = () => {
+    this.props.navigation.navigate('Donor Portal');
+    console.log('Donor/Recipient button pressed!');
+  };
+
+  handleDriverPress = () => {
+    this.props.navigation.navigate('Driver Login');
+    console.log('Delivery Driver button pressed!');
+  };
 
   render() {
     return (
@@ -87,17 +91,62 @@ class LandingPage extends React.Component {
               source={require('./../../assets/images/e930316539a719bb240a81b09af1877d699fdd2a.png')}
               resizeMode='cover'
             />
-            <View
+            <TouchableOpacity
               style={{
-                width: '26.67%',
-                height: '14.99%',
+                width: 348.8,
+                height: 43.826,
                 position: 'absolute',
-                top: '56.52%',
-                left: '25.07%',
-                overflow: 'hidden',
-                zIndex: 7,
+                top: 673,
+                left: 26,
+                zIndex: 1,
+                backgroundColor: '#007bff',
+                borderRadius: 5,
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
-            />
+              onPress={this.handleDonorRecipientPress}
+            >
+              <Text
+                style={{
+                  fontFamily: 'Poppins',
+                  fontSize: 14,
+                  fontWeight: '400',
+                  lineHeight: 21,
+                  color: '#ffffff',
+                }}
+                numberOfLines={1}
+              >
+                Donor/Recipient Portal
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: 348.8,
+                height: 43.826,
+                position: 'absolute',
+                top: 735,
+                left: 26,
+                zIndex: 9,
+                backgroundColor: '#007bff',
+                borderRadius: 5,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              onPress={this.handleDriverPress}
+            >
+              <Text
+                style={{
+                  fontFamily: 'Poppins',
+                  fontSize: 14,
+                  fontWeight: '400',
+                  lineHeight: 21,
+                  color: '#ffffff',
+                }}
+                numberOfLines={1}
+              >
+                Delivery Driver Portal
+              </Text>
+            </TouchableOpacity>
             <Text
               style={{
                 display: 'flex',
@@ -140,74 +189,6 @@ class LandingPage extends React.Component {
             >
               food
             </Text>
-            <ImageBackground
-              style={{
-                width: 348.8,
-                height: 43.826,
-                position: 'absolute',
-                top: 673,
-                left: 26,
-                zIndex: 1,
-              }}
-              source={require('./../../assets/images/dcce2778-a750-474e-9c01-b9506a42c7c9.png')}
-              resizeMode='cover'
-            />
-            <Text
-              style={{
-                display: 'flex',
-                width: '42.13%',
-                height: '3.15%',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                fontWeight: '400',
-                lineHeight: 21,
-                color: '#ffffff',
-                position: 'absolute',
-                top: '84.36%',
-                left: '30.75%',
-                textAlign: 'center',
-                zIndex: 8,
-              }}
-              numberOfLines={1}
-            >
-              Donor/Recipient Portal
-            </Text>
-            <ImageBackground
-              style={{
-                width: 348.8,
-                height: 43.826,
-                position: 'absolute',
-                top: 735,
-                left: 26,
-                zIndex: 9,
-              }}
-              source={require('./../../assets/images/db1ed2c1-3902-44e3-8e38-dbd030fd124e.png')}
-              resizeMode='cover'
-            />
-            <Text
-              style={{
-                display: 'flex',
-                width: '42.13%',
-                height: '3.15%',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                fontWeight: '400',
-                lineHeight: 21,
-                color: '#ffffff',
-                position: 'absolute',
-                top: '92%',
-                left: '30.75%',
-                textAlign: 'center',
-                zIndex: 10,
-              }}
-              numberOfLines={1}
-            >
-              Delivery Driver Portal
-            </Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -215,4 +196,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage
+export default LandingPage;
