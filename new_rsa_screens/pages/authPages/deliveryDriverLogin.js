@@ -26,6 +26,10 @@ class DriverLogin extends React.Component {
     this.props.navigation.navigate('Driver Navigation');
   };
 
+  goBack = () => {
+    this.props.navigation.navigate('Landing Page');
+  };
+
   render() {
     return (
       <SafeAreaView>
@@ -58,7 +62,14 @@ class DriverLogin extends React.Component {
                 marginLeft: 23,
               }}
             >
-              <TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={this.goBack}>
               <ImageBackground
                 style={{
                   width: 11.303,

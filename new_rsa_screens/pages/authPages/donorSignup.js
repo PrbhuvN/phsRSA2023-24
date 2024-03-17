@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   ScrollView,
   TextInput,
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -16,7 +17,7 @@ class DonorSignup extends React.Component {
   }
   
   handleSignUp = () => {
-    this.props.navigation.navigate('Driver Navigation');
+    this.props.navigation.navigate('Welcome Page');
   };
 
   render() {
@@ -119,6 +120,14 @@ class DonorSignup extends React.Component {
               }}
               source={require('./../../assets/images/70bc6466-9564-4dc3-894c-26a256bd9783.png')}
             >
+              <TouchableOpacity
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={this.handleSignUp}>
               <Text
                 style={{
                   display: 'flex',
@@ -141,6 +150,7 @@ class DonorSignup extends React.Component {
               >
                 Request Account Creation
               </Text>
+              </TouchableOpacity>
             </ImageBackground>
             <Text
               style={{
