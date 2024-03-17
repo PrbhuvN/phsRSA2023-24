@@ -5,38 +5,50 @@
  *
  * @format
  */
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
   ImageBackground,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput,
+  Button
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-class DonorPortal extends React.Component {
+import firebaseApp from './../../FirebaseConfig';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth';
 
+const auth = getAuth(firebaseApp);
+
+class DonorPortal extends React.Component {
   constructor(props) {
     super(props);
-  }
 
-  handleLogin = () => {
-    this.props.navigation.navigate('Welcome Page');
-  };
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
 
   goBack = () => {
     this.props.navigation.navigate('Landing Page');
-  }
+  };
+
+
 
   render() {
     return (
       <SafeAreaView>
         <ScrollView
           scrollEnabled={true}
-          contentInsetAdjustmentBehavior='automatic'
-        >
+          contentInsetAdjustmentBehavior="automatic">
           <View
             style={{
               width: 400,
@@ -47,8 +59,7 @@ class DonorPortal extends React.Component {
               marginRight: 'auto',
               marginBottom: 0,
               marginLeft: 'auto',
-            }}
-          >
+            }}>
             <View
               style={{
                 width: 28,
@@ -60,8 +71,7 @@ class DonorPortal extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 23,
-              }}
-            >
+              }}>
               <TouchableOpacity
                 style={{
                   width: '100%',
@@ -70,19 +80,19 @@ class DonorPortal extends React.Component {
                   alignItems: 'center',
                 }}
                 onPress={this.goBack}>
-              <ImageBackground
-                style={{
-                  width: 11.303,
-                  height: 17.505,
-                  position: 'relative',
-                  zIndex: 18,
-                  marginTop: 5.247,
-                  marginRight: 0,
-                  marginBottom: 0,
-                  marginLeft: 8.349,
-                }}
-                source={require('./../../assets/images/7f9e9b3e-0bd5-4b79-87c0-9f1885a8409a.png')}
-              />
+                <ImageBackground
+                  style={{
+                    width: 11.303,
+                    height: 17.505,
+                    position: 'relative',
+                    zIndex: 18,
+                    marginTop: 5.247,
+                    marginRight: 0,
+                    marginBottom: 0,
+                    marginLeft: 8.349,
+                  }}
+                  source={require('./../../assets/images/7f9e9b3e-0bd5-4b79-87c0-9f1885a8409a.png')}
+                />
               </TouchableOpacity>
             </View>
             <Text
@@ -101,8 +111,7 @@ class DonorPortal extends React.Component {
                 marginBottom: 0,
                 marginLeft: 83,
               }}
-              numberOfLines={1}
-            >
+              numberOfLines={1}>
               GreenCornucopia
             </Text>
             <ImageBackground
@@ -117,7 +126,7 @@ class DonorPortal extends React.Component {
                 marginLeft: 129,
               }}
               source={require('./../../assets/images/e930316539a719bb240a81b09af1877d699fdd2a.png')}
-              resizeMode='cover'
+              resizeMode="cover"
             />
             <View
               style={{
@@ -129,8 +138,7 @@ class DonorPortal extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: -47,
-              }}
-            >
+              }}>
               <View
                 style={{
                   width: '60.37%',
@@ -146,7 +154,7 @@ class DonorPortal extends React.Component {
                   zIndex: 13,
                 }}
               />
-              <Text
+              <TextInput
                 style={{
                   display: 'flex',
                   width: '47.61%',
@@ -165,9 +173,8 @@ class DonorPortal extends React.Component {
                   zIndex: 14,
                 }}
                 numberOfLines={1}
-              >
-                Email:
-              </Text>
+                placeholder="email"
+                onChangeText={text => this.setState({email: text})}></TextInput>
             </View>
             <View
               style={{
@@ -179,8 +186,7 @@ class DonorPortal extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: -47,
-              }}
-            >
+              }}>
               <View
                 style={{
                   width: '60.37%',
@@ -196,7 +202,7 @@ class DonorPortal extends React.Component {
                   zIndex: 15,
                 }}
               />
-              <Text
+              <TextInput
                 style={{
                   display: 'flex',
                   width: '47.61%',
@@ -215,9 +221,10 @@ class DonorPortal extends React.Component {
                   zIndex: 16,
                 }}
                 numberOfLines={1}
-              >
-                Password:
-              </Text>
+                placeholder="password"
+                onChangeText={text =>
+                  this.setState({password: text})
+                }></TextInput>
             </View>
             <ImageBackground
               style={{
@@ -230,8 +237,7 @@ class DonorPortal extends React.Component {
                 marginBottom: 0,
                 marginLeft: 51,
               }}
-              source={require('./../../assets/images/b824bafd-9e57-4d35-b5b6-860d661da878.png')}
-            >
+              source={require('./../../assets/images/b824bafd-9e57-4d35-b5b6-860d661da878.png')}>
               <TouchableOpacity
                 style={{
                   width: '100%',
@@ -239,30 +245,34 @@ class DonorPortal extends React.Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
-                onPress={this.handleLogin}
-              >
-              <Text
-                style={{
-                  display: 'flex',
-                  width: '16.49%',
-                  height: '58.6%',
-                  justifyContent: 'center',
-                  alignItems: 'flex-start',
-                  fontFamily: 'Poppins',
-                  fontSize: 14,
-                  fontWeight: '400',
-                  lineHeight: 21,
-                  color: '#ffffff',
-                  position: 'absolute',
-                  top: '19.71%',
-                  left: '40.86%',
-                  textAlign: 'center',
-                  zIndex: 3,
-                }}
-                numberOfLines={1}
-              >
-                Login
-              </Text>
+                onPress={() => {
+                  login(
+                    this.state.email,
+                    this.state.password,
+                    this.props.navigation,
+                  );
+                }}>
+                <Text
+                  style={{
+                    display: 'flex',
+                    width: '16.49%',
+                    height: '58.6%',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                    fontWeight: '400',
+                    lineHeight: 21,
+                    color: '#ffffff',
+                    position: 'absolute',
+                    top: '19.71%',
+                    left: '40.86%',
+                    textAlign: 'center',
+                    zIndex: 3,
+                  }}
+                  numberOfLines={1}>
+                  Login
+                </Text>
               </TouchableOpacity>
             </ImageBackground>
             <View
@@ -275,8 +285,7 @@ class DonorPortal extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 80,
-              }}
-            >
+              }}>
               <View
                 style={{
                   width: '45.66%',
@@ -301,8 +310,7 @@ class DonorPortal extends React.Component {
                   left: '3.85%',
                   textAlign: 'left',
                   zIndex: 11,
-                }}
-              >
+                }}>
                 <Text
                   style={{
                     fontFamily: 'Poppins',
@@ -312,23 +320,22 @@ class DonorPortal extends React.Component {
                     color: '#000000',
                     position: 'relative',
                     textAlign: 'left',
-                  }}
-                >
+                  }}>
                   Don’t have an account?&nbsp;
                 </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Poppins',
-                    fontSize: 13,
-                    fontWeight: '600',
-                    lineHeight: 19.5,
-                    color: '#004bbc',
-                    position: 'relative',
-                    textAlign: 'left',
-                  }}
-                >
-                  Sign up
-                </Text>
+                  <Button
+                    style={{
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: '600',
+                      lineHeight: 19.5,
+                      color: '#004bbc',
+                      position: 'relative',
+                      textAlign: 'left',
+                    }}
+                    onPress={() => {handleSignUp(this.props.navigation);}}
+                    title='Sign Up'>
+                  </Button>
               </Text>
               <Text
                 style={{
@@ -343,8 +350,7 @@ class DonorPortal extends React.Component {
                   left: '3.85%',
                   textAlign: 'left',
                   zIndex: 12,
-                }}
-              >
+                }}>
                 <Text
                   style={{
                     fontFamily: 'Poppins',
@@ -354,22 +360,8 @@ class DonorPortal extends React.Component {
                     color: '#000000',
                     position: 'relative',
                     textAlign: 'left',
-                  }}
-                >
+                  }}>
                   Don’t have an account?&nbsp;
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Poppins',
-                    fontSize: 13,
-                    fontWeight: '600',
-                    lineHeight: 19.5,
-                    color: '#004bbc',
-                    position: 'relative',
-                    textAlign: 'left',
-                  }}
-                >
-                  Sign up
                 </Text>
               </Text>
               <Text
@@ -389,8 +381,7 @@ class DonorPortal extends React.Component {
                   left: 0,
                   textAlign: 'center',
                   zIndex: 9,
-                }}
-              >
+                }}>
                 Connect and Share Surplus{'\n'}Food
               </Text>
             </View>
@@ -411,4 +402,20 @@ class DonorPortal extends React.Component {
   }
 }
 
-export default DonorPortal
+const login = async (email, password, navigation) => {
+  try {
+    const response = await signInWithEmailAndPassword(auth, email, password);
+    console.log(response);
+    navigation.navigate('Welcome Page');
+  } catch (error) {
+    console.log(error);
+    alert(error);
+  }
+};
+
+handleSignUp = (navigation) => {
+  navigation.navigate('Donor Signup');
+};
+
+
+export default DonorPortal;

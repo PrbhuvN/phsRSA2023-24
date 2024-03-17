@@ -72,7 +72,7 @@ class WelcomePage extends React.Component {
                 }}
                 numberOfLines={1}>
                 Welcome Back
-              </Text>
+                </Text>
               <View
                 style={{
                   display: 'flex',
@@ -88,7 +88,9 @@ class WelcomePage extends React.Component {
                   marginBottom: 0,
                   marginLeft: 35,
                 }}>
-                <ImageBackground
+                <TouchableOpacity
+                onPress={this.gotoRequest}>
+                  <ImageBackground
                   style={{
                     width: 148.267,
                     height: 173.911,
@@ -158,7 +160,8 @@ class WelcomePage extends React.Component {
                     Request
                   </Text>
                   </TouchableOpacity>
-                </ImageBackground>
+                </ImageBackground></TouchableOpacity>
+                <TouchableOpacity>
                 <ImageBackground
                   style={{
                     width: 148.267,
@@ -227,7 +230,9 @@ class WelcomePage extends React.Component {
                     Distribute
                   </Text>
                 </ImageBackground>
+                </TouchableOpacity>
               </View>
+              <TouchableOpacity>
               <ImageBackground
                 style={{
                   width: 148.267,
@@ -238,6 +243,7 @@ class WelcomePage extends React.Component {
                   marginRight: 0,
                   marginBottom: 0,
                   marginLeft: 123,
+                  
                 }}
                 source={require('./../assets/images/a52698e9-2bff-49b7-b7da-d202079e477c.png')}>
                 <ImageBackground
@@ -297,20 +303,25 @@ class WelcomePage extends React.Component {
                   Deliver
                 </Text>
               </ImageBackground>
+              </TouchableOpacity>
+              <TouchableOpacity>
               <View
                 style={{
-                  width: 333.2,
+                  width: 'auto',
                   height: 45,
                   position: 'relative',
                   zIndex: 39,
-                  marginTop: 126.154,
+                  marginTop: 110.154,
                   marginRight: 0,
                   marginBottom: 0,
-                  marginLeft: 44.333,
+                  
+                  backgroundColor:'#d2b48c',
+
                 }}>
+                  
                 <ImageBackground
                   style={{
-                    width: '13.51%',
+                    width: '38.51%',
                     height: '100%',
                     position: 'absolute',
                     top: 0,
@@ -318,6 +329,7 @@ class WelcomePage extends React.Component {
                     zIndex: 32,
                   }}
                   source={require('./../assets/images/89fe0b11-8a45-4872-8bc5-16b971726c3d.png')}>
+                    
                   <View
                     style={{
                       width: 15,
@@ -330,6 +342,7 @@ class WelcomePage extends React.Component {
                       marginBottom: 0,
                       marginLeft: 15,
                     }}>
+                      
                     <ImageBackground
                       style={{
                         width: 13.125,
@@ -345,6 +358,7 @@ class WelcomePage extends React.Component {
                     />
                   </View>
                 </ImageBackground>
+                
                 <ImageBackground
                   style={{
                     width: '5.76%',
@@ -357,6 +371,7 @@ class WelcomePage extends React.Component {
                   }}
                   source={require('./../assets/images/243c3b2b-03a7-4c79-803f-3503300cb756.png')}
                 />
+                
                 <View
                   style={{
                     width: '6%',
@@ -367,6 +382,7 @@ class WelcomePage extends React.Component {
                     overflow: 'hidden',
                     zIndex: 39,
                   }}>
+                    
                   <ImageBackground
                     style={{
                       width: 19.999,
@@ -380,7 +396,9 @@ class WelcomePage extends React.Component {
                     }}
                     source={require('./../assets/images/ee9c6fa5-0847-415c-860b-4c416fdc4e4c.png')}
                   />
+                  
                 </View>
+                
                 <View
                   style={{
                     width: '5.76%',
@@ -391,6 +409,7 @@ class WelcomePage extends React.Component {
                     overflow: 'hidden',
                     zIndex: 28,
                   }}>
+                    
                   <ImageBackground
                     style={{
                       width: 19.2,
@@ -405,6 +424,7 @@ class WelcomePage extends React.Component {
                     source={require('./../assets/images/0a1a6dce-6539-44ae-b9e1-46bdff0674d5.png')}
                   />
                 </View>
+                
                 <View
                   style={{
                     width: '5.76%',
@@ -452,29 +472,10 @@ class WelcomePage extends React.Component {
                   />
                 </View>
               </View>
+              </TouchableOpacity>
             </ImageBackground>
-            <ImageBackground
-              style={{
-                width: '100%',
-                height: '100%',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                zIndex: 1,
-              }}
-              source={require('./../assets/images/236bd16d-ccb3-40fc-afcf-1a2130eef73e.png')}
-            />
-            <ImageBackground
-              style={{
-                width: '100%',
-                height: '8.63%',
-                position: 'absolute',
-                top: '91.38%',
-                left: 0,
-                zIndex: 27,
-              }}
-              source={require('./../assets/images/06a80fce-86a3-45de-b2e8-536480664ea1.png')}
-            />
+            
+            
           </View>
         </ScrollView>
       </SafeAreaView>

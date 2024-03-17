@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -6,33 +6,35 @@ import {
   SafeAreaView,
   ScrollView,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
+import {firebaseApp, db} from './../../FirebaseConfig';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore'
+
+const auth = getAuth(firebaseApp);
+
 class DonorSignup extends React.Component {
-  
   constructor(props) {
     super(props);
 
     this.state = {
       email: '',
       password: '',
-    }
+    };
   }
-  
-  handleSignUp = () => {
-    this.props.navigation.navigate('Welcome Page');
+  goBack = () => {
+    this.props.navigation.navigate('Donor Portal');
   };
 
   render() {
     return (
-      
       <SafeAreaView>
         <ScrollView
           scrollEnabled={true}
-          contentInsetAdjustmentBehavior='automatic'
-        >
+          contentInsetAdjustmentBehavior="automatic">
           <View
             style={{
               width: 400,
@@ -43,8 +45,7 @@ class DonorSignup extends React.Component {
               marginRight: 'auto',
               marginBottom: 0,
               marginLeft: 'auto',
-            }}
-          >
+            }}>
             <View
               style={{
                 width: 28,
@@ -56,8 +57,17 @@ class DonorSignup extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 23,
-              }}
-            >
+              }}>
+              <TouchableOpacity
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  this.goBack();
+                }}>
               <ImageBackground
                 style={{
                   width: 11.303,
@@ -71,6 +81,7 @@ class DonorSignup extends React.Component {
                 }}
                 source={require('./../../assets/images/f315e544-b31a-4778-954d-a74d6e051009.png')}
               />
+              </TouchableOpacity>
             </View>
             <View
               style={{
@@ -87,8 +98,7 @@ class DonorSignup extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 49,
-              }}
-            >
+              }}>
               <Text
                 style={{
                   display: 'flex',
@@ -100,15 +110,14 @@ class DonorSignup extends React.Component {
                   fontSize: 16,
                   fontWeight: '700',
                   lineHeight: 20.582,
-                  color: '#898686',
+                  color: 'black',
                   position: 'absolute',
                   top: '16.22%',
                   left: 0,
                   textAlign: 'center',
                   zIndex: 26,
                 }}
-                numberOfLines={1}
-              >
+                numberOfLines={1}>
                 Re-Enter Password
               </Text>
             </View>
@@ -123,8 +132,7 @@ class DonorSignup extends React.Component {
                 marginBottom: 0,
                 marginLeft: 54,
               }}
-              source={require('./../../assets/images/70bc6466-9564-4dc3-894c-26a256bd9783.png')}
-            >
+              source={require('./../../assets/images/70bc6466-9564-4dc3-894c-26a256bd9783.png')}>
               <TouchableOpacity
                 style={{
                   width: '100%',
@@ -132,29 +140,31 @@ class DonorSignup extends React.Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
-                onPress={this.handleSignUp}>
-              <Text
-                style={{
-                  display: 'flex',
-                  width: '87.03%',
-                  height: '30.37%',
-                  justifyContent: 'center',
-                  alignItems: 'flex-start',
-                  fontFamily: 'Poppins',
-                  fontSize: 14,
-                  fontWeight: '400',
-                  lineHeight: 16,
-                  color: '#ffffff',
-                  position: 'absolute',
-                  top: '34.17%',
-                  left: '5.71%',
-                  textAlign: 'center',
-                  zIndex: 3,
+                onPress={() => {
+                  signup(this.state.email, this.state.password, this.props.navigation);
                 }}
-                numberOfLines={1}
-              >
-                Request Account Creation
-              </Text>
+                >
+                <Text
+                  style={{
+                    display: 'flex',
+                    width: '87.03%',
+                    height: '30.37%',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                    fontWeight: '400',
+                    lineHeight: 16,
+                    color: '#ffffff',
+                    position: 'absolute',
+                    top: '34.17%',
+                    left: '5.71%',
+                    textAlign: 'center',
+                    zIndex: 3,
+                  }}
+                  numberOfLines={1}>
+                  Request Account Creation
+                </Text>
               </TouchableOpacity>
             </ImageBackground>
             <Text
@@ -177,8 +187,7 @@ class DonorSignup extends React.Component {
                 marginRight: 0,
                 marginBottom: 0,
                 marginLeft: 72,
-              }}
-            >
+              }}>
               Connect and Share Surplus{'\n'}Food
             </Text>
             <ImageBackground
@@ -208,8 +217,7 @@ class DonorSignup extends React.Component {
                 left: '20.75%',
                 textAlign: 'center',
                 zIndex: 6,
-              }}
-            >
+              }}>
               GreenCornucopia
             </Text>
             <ImageBackground
@@ -222,7 +230,7 @@ class DonorSignup extends React.Component {
                 zIndex: 20,
               }}
               source={require('./../../assets/images/e930316539a719bb240a81b09af1877d699fdd2a.png')}
-              resizeMode='cover'
+              resizeMode="cover"
             />
             <View
               style={{
@@ -240,6 +248,7 @@ class DonorSignup extends React.Component {
               }}
             />
             <TextInput
+            placeholder="First Name"
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -250,18 +259,17 @@ class DonorSignup extends React.Component {
                 fontSize: 16,
                 fontWeight: '700',
                 lineHeight: 20.582,
-                color: '#898686',
+                color: 'black',
                 position: 'absolute',
                 top: '24.3%',
-                left: '4%',
-                textAlign: 'center',
+                left: '16%',
+                textAlign: 'left',
                 zIndex: 11,
               }}
-              numberOfLines={1}
-            >
-              First Name
+              numberOfLines={1}>
+              
             </TextInput>
-            
+
             <View
               style={{
                 width: '75.75%',
@@ -277,7 +285,8 @@ class DonorSignup extends React.Component {
                 zIndex: 12,
               }}
             />
-            <Text
+            <TextInput
+            placeholder="Last Name"
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -288,17 +297,16 @@ class DonorSignup extends React.Component {
                 fontSize: 16,
                 fontWeight: '700',
                 lineHeight: 20.582,
-                color: '#898686',
+                color: 'black',
                 position: 'absolute',
                 top: '31.91%',
-                left: '4%',
-                textAlign: 'center',
+                left: '16%',
+                textAlign: 'left',
                 zIndex: 21,
               }}
-              numberOfLines={1}
-            >
-              Last Name
-            </Text>
+              numberOfLines={1}>
+              
+            </TextInput>
             <View
               style={{
                 width: '75.75%',
@@ -314,7 +322,8 @@ class DonorSignup extends React.Component {
                 zIndex: 13,
               }}
             />
-            <Text
+            <TextInput
+            placeholder="Phone Number"
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -325,17 +334,16 @@ class DonorSignup extends React.Component {
                 fontSize: 16,
                 fontWeight: '700',
                 lineHeight: 20.582,
-                color: '#898686',
+                color: 'black',
                 position: 'absolute',
                 top: '39.07%',
-                left: '8.25%',
-                textAlign: 'center',
+                left: '16%',
+                textAlign: 'left',
                 zIndex: 22,
               }}
-              numberOfLines={1}
-            >
-              Phone Number
-            </Text>
+              numberOfLines={1}>
+              
+            </TextInput>
             <View
               style={{
                 width: '75.75%',
@@ -351,7 +359,7 @@ class DonorSignup extends React.Component {
                 zIndex: 14,
               }}
             />
-            <Text
+            <TextInput
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -362,17 +370,17 @@ class DonorSignup extends React.Component {
                 fontSize: 16,
                 fontWeight: '700',
                 lineHeight: 20.582,
-                color: '#898686',
+                color: 'black',
                 position: 'absolute',
                 top: '46.42%',
                 left: '-0.5%',
                 textAlign: 'center',
                 zIndex: 23,
               }}
+              onChangeText={(text) => this.setState({email:text})}
               numberOfLines={1}
-            >
-              Email
-            </Text>
+              placeholder='email'>
+            </TextInput>
             <View
               style={{
                 width: '75.75%',
@@ -388,7 +396,7 @@ class DonorSignup extends React.Component {
                 zIndex: 17,
               }}
             />
-            <Text
+            <TextInput
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -399,17 +407,17 @@ class DonorSignup extends React.Component {
                 fontSize: 16,
                 fontWeight: '700',
                 lineHeight: 20.582,
-                color: '#898686',
+                color: 'black',
                 position: 'absolute',
                 top: '53.76%',
                 left: '9%',
                 textAlign: 'center',
                 zIndex: 24,
               }}
+              onChangeText={(text) => this.setState({password:text})}
               numberOfLines={1}
-            >
-              Phone Number
-            </Text>
+              placeholder='password'>
+            </TextInput>
             <View
               style={{
                 width: '75.75%',
@@ -423,9 +431,10 @@ class DonorSignup extends React.Component {
                 top: '60.58%',
                 left: '12.25%',
                 zIndex: 15,
+                
               }}
             />
-            <Text
+            <TextInput
               style={{
                 display: 'flex',
                 width: '47.73%',
@@ -436,21 +445,53 @@ class DonorSignup extends React.Component {
                 fontSize: 16,
                 fontWeight: '700',
                 lineHeight: 20.582,
-                color: '#898686',
+                color: 'black',
                 position: 'absolute',
                 top: '61.1%',
                 left: '3.75%',
                 textAlign: 'center',
                 zIndex: 25,
+                
               }}
+              onChangeText={(text) => this.setState({password:text})}
               numberOfLines={1}
-            >
-              Password
-            </Text>
+              placeholder='re-enter password'>
+            </TextInput>
           </View>
         </ScrollView>
       </SafeAreaView>
     );
+  }
 }
-}
-export default DonorSignup
+
+const signup = async (email, password, navigation) => {
+  try {
+    const response = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+    console.log(response);
+
+    const userData = {
+      fName: 'joe',
+      lName: 'mama',
+      number: 69420
+    }
+
+    try {
+      const firestoreResponse = await setDoc(doc(db, "users", response.user.uid), userData);
+    } catch (error) {
+      console.log(error);
+      alert(error);
+    }
+
+
+    navigation.navigate('Welcome Page');
+  } catch (error) {
+    console.log(error);
+    alert(error);
+  }
+};
+
+export default DonorSignup;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,10 @@ class DriverLogin extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
   }
 
   handleLogin = () => {
@@ -212,6 +216,7 @@ class DriverLogin extends React.Component {
                 keyboardType="email-address"
                 autoCapitalize="none"
                 autoCorrect={false}
+                onChangeText={(text) => this.setState({email:text})}
               />
             </View>
             <View
@@ -260,8 +265,9 @@ class DriverLogin extends React.Component {
                   zIndex: 16,
                 }}
                 numberOfLines={1}
+                placeholder='password'
+                onChangeText={(text) => this.setState({password:text})}
               >
-                Password:
               </Text>
               <TextInput
                 style={{
