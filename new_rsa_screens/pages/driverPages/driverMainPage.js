@@ -12,6 +12,7 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -20,8 +21,14 @@ class DriverMainPage extends React.Component {
     super(props);
   }
 
+  gotoRequests = () => {
+    this.props.navigation.navigate('View Requests', {
+      uid: this.props.route.params.user.uid
+    });
+  }
+
   render() {
-    //console.log(this.props.navigation.state.params);
+    console.log(this.props.route.params);
     return (
       <SafeAreaView>
         <ScrollView
@@ -634,6 +641,11 @@ class DriverMainPage extends React.Component {
                     marginLeft: 24,
                   }}
                   source={require('./../../assets/images/ad8e9c68-ed3a-4379-bf82-a0523e72516a.png')}>
+                    <TouchableOpacity
+                    
+                    onPress={() => {
+                      this.gotoRequests();
+                    }}>
                   <Text
                     style={{
                       display: 'flex',
@@ -655,6 +667,7 @@ class DriverMainPage extends React.Component {
                     numberOfLines={1}>
                     View Other Requests{'\n'}
                   </Text>
+                  </TouchableOpacity>
                 </ImageBackground>
                 <ImageBackground
                   style={{

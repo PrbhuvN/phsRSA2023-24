@@ -1,6 +1,6 @@
 import { AppRegistry, Platform } from 'react-native';
 //import App from './pages/donatorPages/myDonations';
-import App from './pages/authPages/donorLogin.js';
+import App from './pages/MainNavigation.js';
 
 AppRegistry.registerComponent('main', () => App);
 

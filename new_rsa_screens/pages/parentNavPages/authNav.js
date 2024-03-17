@@ -41,6 +41,11 @@ class AuthNav extends React.Component {
             options={{ headerShown: false }}
           />
           <AuthStack.Screen
+            name='Driver Signup'
+            component={DriverSignup}
+            options={{ headerShown: false }}
+          />
+          <AuthStack.Screen
             name='Account Review'
             component={ReviewPage}
             options={{ headerShown: false }}

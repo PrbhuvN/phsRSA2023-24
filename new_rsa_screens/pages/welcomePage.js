@@ -22,11 +22,16 @@ class WelcomePage extends React.Component {
   }
 
   gotoRequest = () => {
-    this.props.navigation.navigate('Requester Navigation');
+    this.props.navigation.navigate('Requester Navigation', {
+      screen: 'Main Page',
+      params: {
+        uid: this.props.route.params,
+      }
+    });
   };
 
   render() {
-    //console.log(this.props.route.params);
+    console.log(this.props.route.params);
     return (
       <SafeAreaView>
         <ScrollView

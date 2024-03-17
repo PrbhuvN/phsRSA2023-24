@@ -17,6 +17,7 @@ class DriverNav extends React.Component {
   }
 
   render() {
+    //console.log(this.props.navigation.state.params);
     return ( 
         <DriverStack.Navigator initialRouteName='Driver Navigation'>
           <DriverStack.Screen

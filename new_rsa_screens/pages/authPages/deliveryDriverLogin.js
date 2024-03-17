@@ -7,6 +7,7 @@ import {
   ScrollView,
   TextInput,
   StyleSheet,
+  Button,
   TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -31,8 +32,8 @@ class DriverLogin extends React.Component {
   };
 
   signup = () => {
-    this.props.navigation.navigate('Driver Signup')
-  }
+    this.props.navigation.navigate('Driver Signup');
+  };
 
   render() {
     return (
@@ -371,7 +372,6 @@ class DriverLogin extends React.Component {
               >
                 Not a Delivery Driver?&nbsp;
               </Text>
-              <TouchableOpacity onPress={this.handleSignUp}>
                 <Button
                   style={{
                     display: 'flex',
@@ -389,9 +389,9 @@ class DriverLogin extends React.Component {
                     textAlign: 'left',
                     zIndex: 21,
                   }}
-                  title='Sign up and Get Verified'>
+                  title='Sign up and Get Verified'
+                  onPress={this.signup}>
                 </Button>
-              </TouchableOpacity>
             </View>
             <ImageBackground
               style={{
@@ -452,8 +452,12 @@ const login = async (email, password, navigation) => {
   try {
     const response = await signInWithEmailAndPassword(auth, email, password);
     console.log(response);
-    navigation.navigate('Driver Navigation', {
-            uid: response.user.uid
+    navigation.navigate('Driver Navigation', { 
+      screen: 'Main Page', 
+      params: 
+      {
+        uid: response.user.uid
+      }
     });
   } catch (error) {
     console.log(error);

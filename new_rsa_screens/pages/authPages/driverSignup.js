@@ -30,7 +30,7 @@ class DriverSignup extends React.Component {
     };
   }
   goBack = () => {
-    this.props.navigation.navigate('Donor Portal');
+    this.props.navigation.navigate('Driver Login');
   };
 
   render() {

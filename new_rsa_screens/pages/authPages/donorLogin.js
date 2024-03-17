@@ -41,8 +41,6 @@ class DonorLogin extends React.Component {
     this.props.navigation.navigate('Landing Page');
   };
 
-
-
   render() {
     return (
       <SafeAreaView>
@@ -139,7 +137,8 @@ class DonorLogin extends React.Component {
                 marginBottom: 0,
                 marginLeft: -47,
               }}>
-              <View
+                
+              <TextInput
                 style={{
                   width: '60.37%',
                   height: '100%',
@@ -153,8 +152,12 @@ class DonorLogin extends React.Component {
                   left: '39.63%',
                   zIndex: 13,
                 }}
+                numberOfLines={1}
+                placeholder="email"
+                onChangeText={text => this.setState({email: text})}
               />
-              <TextInput
+              
+              <Text
                 style={{
                   display: 'flex',
                   width: '47.61%',
@@ -172,9 +175,7 @@ class DonorLogin extends React.Component {
                   textAlign: 'center',
                   zIndex: 14,
                 }}
-                numberOfLines={1}
-                placeholder="email"
-                onChangeText={text => this.setState({email: text})}></TextInput>
+                >Email: </Text>
             </View>
             <View
               style={{
@@ -187,7 +188,8 @@ class DonorLogin extends React.Component {
                 marginBottom: 0,
                 marginLeft: -47,
               }}>
-              <View
+                
+              <TextInput
                 style={{
                   width: '60.37%',
                   height: '100%',
@@ -201,8 +203,12 @@ class DonorLogin extends React.Component {
                   left: '39.63%',
                   zIndex: 15,
                 }}
+                placeholder="password"
+                onChangeText={text =>
+                  this.setState({password: text})
+              }
               />
-              <TextInput
+              <Text
                 style={{
                   display: 'flex',
                   width: '47.61%',
@@ -221,10 +227,7 @@ class DonorLogin extends React.Component {
                   zIndex: 16,
                 }}
                 numberOfLines={1}
-                placeholder="password"
-                onChangeText={text =>
-                  this.setState({password: text})
-                }></TextInput>
+                >Password: </Text>
             </View>
             <ImageBackground
               style={{
@@ -237,7 +240,8 @@ class DonorLogin extends React.Component {
                 marginBottom: 0,
                 marginLeft: 51,
               }}
-              source={require('./../../assets/images/b824bafd-9e57-4d35-b5b6-860d661da878.png')}>
+              source={require('./../../assets/images/b824bafd-9e57-4d35-b5b6-860d661da878.png')}
+              >
               <TouchableOpacity
                 style={{
                   width: '100%',
@@ -351,18 +355,6 @@ class DonorLogin extends React.Component {
                   textAlign: 'left',
                   zIndex: 12,
                 }}>
-                <Text
-                  style={{
-                    fontFamily: 'Poppins',
-                    fontSize: 13,
-                    fontWeight: '400',
-                    lineHeight: 19.5,
-                    color: '#000000',
-                    position: 'relative',
-                    textAlign: 'left',
-                  }}>
-                  Don’t have an account?&nbsp;
-                </Text>
               </Text>
               <Text
                 style={{
