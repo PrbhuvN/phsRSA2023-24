@@ -310,7 +310,7 @@ class WelcomePage extends React.Component {
                 </Text>
               </ImageBackground>
               </TouchableOpacity>
-              <TouchableOpacity>
+              
               <View
                 style={{
                   width: 'auto',
@@ -325,7 +325,7 @@ class WelcomePage extends React.Component {
 
                 }}>
                   
-                <ImageBackground
+                  <ImageBackground
                   style={{
                     width: '35.51%',
                     height: '90%',
@@ -335,10 +335,12 @@ class WelcomePage extends React.Component {
                     zIndex: 32,
                     
                   }}
+                  onPress={this.props.navigation.navigate('Donation Info')}
                   source={require('./../assets/images/89fe0b11-8a45-4872-8bc5-16b971726c3d.png')}
                   //circle for the bar
                   > 
                   
+                  <TouchableOpacity>
                   <View
                     style={{
                       width: 15,
@@ -363,26 +365,32 @@ class WelcomePage extends React.Component {
                         marginBottom: 0,
                         marginLeft: 4,
                       }}
+                      onPress={this.props.navigation.navigate('Donation Info')}
                       source={require('./../assets/images/b2bf878b-69a0-4ccc-a0f3-be491088a261.png')}
                       //plus sign
                     />
                   </View>
+                  </TouchableOpacity>
                 </ImageBackground>
                 
+                <TouchableOpacity>
                 <ImageBackground
                   style={{
                     width: '25.76%',
                     height: '80.05%',
-                    position: 'absolute',
-                    top: 13,
+                    position: 'relative',
+                    top: 16,
                     left: 20,
                     
                     zIndex: 30,
                   }}
+                  onPress={this.props.navigation.navigate('Main Page')}
                   source={require('./../assets/images/243c3b2b-03a7-4c79-803f-3503300cb756.png')}
                   //house icon
                 />
+                </TouchableOpacity>
                 
+                <TouchableOpacity>
                 <View
                   style={{
                     width: '6%',
@@ -400,17 +408,20 @@ class WelcomePage extends React.Component {
                       height: 22.502,
                       position: 'relative',
                       
-                      marginTop: 5.5,
+                      marginTop: -28,
                       marginRight: 0,
                       marginBottom: 5,
                       marginLeft: 10,
                     }}
+                    onPress={this.props.navigation.navigate('My Donations')}
                     source={require('./../assets/images/ee9c6fa5-0847-415c-860b-4c416fdc4e4c.png')}
                     //search icon
                   />
                   
                 </View>
+                </TouchableOpacity>
                 
+                <TouchableOpacity>
                 <View
                   style={{
                     width: '5.76%',
@@ -428,15 +439,17 @@ class WelcomePage extends React.Component {
                       height: 23.017,
                       position: 'relative',
                       
-                      marginTop: 5,
+                      marginTop: -27,
                       marginRight: 20,
                       marginBottom: 0,
                       marginLeft: -10,
                     }}
+                    onPress={this.props.navigation.navigate('Chat Page')}
                     source={require('./../assets/images/0a1a6dce-6539-44ae-b9e1-46bdff0674d5.png')}
                     //chatpage icon
                   />
                 </View>
+                </TouchableOpacity>
                 
                 <View
                   style={{
@@ -448,6 +461,7 @@ class WelcomePage extends React.Component {
                     
                     zIndex: 35,
                   }}>
+                  <TouchableOpacity>
                   <View
                     style={{
                       width: '104.17%',
@@ -455,7 +469,7 @@ class WelcomePage extends React.Component {
                       position: 'absolute',
                       top: '-0.29%',
                       left: '-1.74%',
-                    
+                      
                       zIndex: 37,
                     }}>
                     <ImageBackground
@@ -469,14 +483,19 @@ class WelcomePage extends React.Component {
                         marginBottom: 0,
                         marginLeft: 1.25,
                       }}
+                      onPress={this.props.navigation.navigate('Support Navigation', {
+                        screen: 'Help Page'
+                      })}
                       source={require('./../assets/images/0b6f69f2-1210-4181-a512-61883267a849.png')}
                       //account pfp
                     />
                   </View>
+                  </TouchableOpacity>
                   
                 </View>
               </View>
-              </TouchableOpacity>
+           
+              
             </ImageBackground>
             
             

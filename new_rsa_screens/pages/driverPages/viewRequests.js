@@ -537,7 +537,7 @@ class RequestsPage extends React.Component {
         </ScrollView>
       </SafeAreaView>
     );
-  }
+  };
 }
 
 export default RequestsPage;
