@@ -21,6 +21,7 @@ class DriverMainPage extends React.Component {
   }
 
   render() {
+    //console.log(this.props.navigation.state.params);
     return (
       <SafeAreaView>
         <ScrollView

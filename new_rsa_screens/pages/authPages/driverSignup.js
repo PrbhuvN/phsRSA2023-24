@@ -16,7 +16,7 @@ import { doc, setDoc } from 'firebase/firestore'
 
 const auth = getAuth(firebaseApp);
 
-class DonorSignup extends React.Component {
+class DriverSignup extends React.Component {
   constructor(props) {
     super(props);
 
@@ -479,7 +479,7 @@ const signup = async (state, navigation) => {
     }
 
     try {
-      const firestoreResponse = await setDoc(doc(db, "users", response.user.uid), userData);
+      const firestoreResponse = await setDoc(doc(db, "drivers", response.user.uid), userData);
       console.log(firestoreResponse);
     } catch (error) {
       console.log(error);
@@ -492,4 +492,4 @@ const signup = async (state, navigation) => {
   }
 };
 
-export default DonorSignup;
+export default DriverSignup;

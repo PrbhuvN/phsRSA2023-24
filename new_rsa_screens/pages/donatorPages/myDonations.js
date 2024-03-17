@@ -12,6 +12,7 @@ import {
   ImageBackground,
   SafeAreaView,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -1932,7 +1933,7 @@ export default MyDonations;
                     zIndex: 32,
                     
                   }}
-                  source={require('./../assets/images/89fe0b11-8a45-4872-8bc5-16b971726c3d.png')}
+                  source={require('./../../assets/images/89fe0b11-8a45-4872-8bc5-16b971726c3d.png')}
                   //circle for the bar
                   > 
                   
@@ -1960,7 +1961,7 @@ export default MyDonations;
                         marginBottom: 0,
                         marginLeft: 4,
                       }}
-                      source={require('./../assets/images/b2bf878b-69a0-4ccc-a0f3-be491088a261.png')}
+                      source={require('./../../assets/images/b2bf878b-69a0-4ccc-a0f3-be491088a261.png')}
                       //plus sign
                     />
                   </View>
@@ -1976,7 +1977,7 @@ export default MyDonations;
                     
                     zIndex: 30,
                   }}
-                  source={require('./../assets/images/243c3b2b-03a7-4c79-803f-3503300cb756.png')}
+                  source={require('./../../assets/images/243c3b2b-03a7-4c79-803f-3503300cb756.png')}
                   //house icon
                 />
                 
@@ -2002,7 +2003,7 @@ export default MyDonations;
                       marginBottom: 5,
                       marginLeft: 10,
                     }}
-                    source={require('./../assets/images/ee9c6fa5-0847-415c-860b-4c416fdc4e4c.png')}
+                    source={require('./../../assets/images/ee9c6fa5-0847-415c-860b-4c416fdc4e4c.png')}
                     //search icon
                   />
                   
@@ -2030,7 +2031,7 @@ export default MyDonations;
                       marginBottom: 0,
                       marginLeft: -10,
                     }}
-                    source={require('./../assets/images/0a1a6dce-6539-44ae-b9e1-46bdff0674d5.png')}
+                    source={require('./../../assets/images/0a1a6dce-6539-44ae-b9e1-46bdff0674d5.png')}
                     //chatpage icon
                   />
                 </View>
@@ -2066,7 +2067,7 @@ export default MyDonations;
                         marginBottom: 0,
                         marginLeft: 1.25,
                       }}
-                      source={require('./../assets/images/0b6f69f2-1210-4181-a512-61883267a849.png')}
+                      source={require('./../../assets/images/0b6f69f2-1210-4181-a512-61883267a849.png')}
                       //account pfp
                     />
                   </View>

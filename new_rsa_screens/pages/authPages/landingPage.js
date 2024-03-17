@@ -16,7 +16,7 @@ class LandingPage extends React.Component {
   }
 
   handleDonorRecipientPress = () => {
-    this.props.navigation.navigate('Donor Portal');
+    this.props.navigation.navigate('Donor Login');
     console.log('Donor/Recipient button pressed!');
   };
 

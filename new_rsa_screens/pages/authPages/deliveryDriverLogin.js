@@ -11,6 +11,11 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
+import {firebaseApp} from './../../FirebaseConfig';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+
+const auth = getAuth(firebaseApp);
+
 class DriverLogin extends React.Component {
 
   constructor(props) {
@@ -20,15 +25,6 @@ class DriverLogin extends React.Component {
       password: '',
     };
   }
-
-  handleLogin = () => {
-    this.props.navigation.navigate('Driver Navigation');
-  };
-
-  handleSignUp = () => {
-    // change me later
-    this.props.navigation.navigate('Driver Navigation');
-  };
 
   goBack = () => {
     this.props.navigation.navigate('Landing Page');
@@ -265,9 +261,8 @@ class DriverLogin extends React.Component {
                   zIndex: 16,
                 }}
                 numberOfLines={1}
-                placeholder='password'
-                onChangeText={(text) => this.setState({password:text})}
               >
+                Password:
               </Text>
               <TextInput
                 style={{
@@ -284,6 +279,7 @@ class DriverLogin extends React.Component {
                 secureTextEntry={true}
                 autoCapitalize="none"
                 autoCorrect={false}
+                onChangeText={(text) => this.setState({password:text})}
               />
             </View>
             <ImageBackground
@@ -306,8 +302,13 @@ class DriverLogin extends React.Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
-                onPress={this.handleLogin}
-              >
+                onPress={() => {
+                  login(
+                    this.state.email,
+                    this.state.password,
+                    this.props.navigation,
+                  );
+                }}>
                 <Text
                   style={{
                     fontFamily: 'Poppins',
@@ -444,5 +445,18 @@ class DriverLogin extends React.Component {
     );
   }
 }
+
+const login = async (email, password, navigation) => {
+  try {
+    const response = await signInWithEmailAndPassword(auth, email, password);
+    console.log(response);
+    navigation.navigate('Driver Navigation', {
+            uid: response.user.uid
+    });
+  } catch (error) {
+    console.log(error);
+    alert(error);
+  }
+};
 
 export default DriverLogin;

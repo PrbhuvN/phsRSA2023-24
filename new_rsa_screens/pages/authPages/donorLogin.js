@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import firebaseApp from './../../FirebaseConfig';
+import firebaseApp from '../../FirebaseConfig';
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -27,7 +27,7 @@ import {
 
 const auth = getAuth(firebaseApp);
 
-class DonorPortal extends React.Component {
+class DonorLogin extends React.Component {
   constructor(props) {
     super(props);
 
@@ -406,7 +406,9 @@ const login = async (email, password, navigation) => {
   try {
     const response = await signInWithEmailAndPassword(auth, email, password);
     console.log(response);
-    navigation.navigate('Welcome Page');
+    navigation.navigate('Welcome Page', {
+      uid: response.user.uid
+    });
   } catch (error) {
     console.log(error);
     alert(error);
@@ -418,4 +420,4 @@ handleSignUp = (navigation) => {
 };
 
 
-export default DonorPortal;
+export default DonorLogin;

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import LandingPage from './../authPages/landingPage.js';
-import DonorPortal from './../authPages/donorPortal.js';
+import DonorLogin from './../authPages/donorLogin.js';
 import DonorSignup from './../authPages/donorSignup.js';
 import DriverLogin from './../authPages/deliveryDriverLogin.js';
+import DriverSignup from './../authPages/driverSignup.js';
 import ReviewPage from './../authPages/accountReview.js'
 import WelcomePage from './../welcomePage.js';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -25,8 +26,8 @@ class AuthNav extends React.Component {
             options={{ headerShown: false }}
           />
           <AuthStack.Screen
-            name='Donor Portal'
-            component={DonorPortal}
+            name='Donor Login'
+            component={DonorLogin}
             options={{ headerShown: false }}
           />
           <AuthStack.Screen
