@@ -218,6 +218,9 @@ class RequestsPage extends React.Component {
               }}
               source={require('./../../assets/images/f4c4cf09-7f17-447c-8c7b-d09278af62f9.png')}
             />
+            
+            {/* card start */}
+              {/*card background*/}
             <ImageBackground
               style={{
                 width: 362,
@@ -229,7 +232,9 @@ class RequestsPage extends React.Component {
                 marginBottom: 0,
                 marginLeft: 18,
               }}
-              source={require('./../../assets/images/935c8062-6e4a-4d18-a6c8-f0b7bc349779.png')}>
+              source={require('./../../assets/images/935c8062-6e4a-4d18-a6c8-f0b7bc349779.png')}
+              >
+                {/*card 3 dots thingy*/}
               <ImageBackground
                 style={{
                   width: 11.813,
@@ -243,6 +248,7 @@ class RequestsPage extends React.Component {
                 }}
                 source={require('./../../assets/images/1bda9b54-ce26-4768-908e-2be87be9e56d.png')}
               />
+              {/*upper bar collection*/}
               <View
                 style={{
                   width: 327,
@@ -254,6 +260,8 @@ class RequestsPage extends React.Component {
                   marginBottom: 0,
                   marginLeft: 11,
                 }}>
+
+                  {/*pfp*/}
                 <ImageBackground
                   style={{
                     width: 32,
@@ -265,7 +273,7 @@ class RequestsPage extends React.Component {
                     marginBottom: 0,
                     marginLeft: 223,
                   }}
-                  source={require('./../../assets/images/561ec805-975f-4f98-a6a1-78a6820aa351.png')}>
+                  >
                   <ImageBackground
                     style={{
                       width: '100%',
@@ -278,6 +286,7 @@ class RequestsPage extends React.Component {
                     source={require('./../../assets/images/de8116f3-5eab-4da6-a85d-0ea13fdd6186.png')}
                   />
                 </ImageBackground>
+                {/* card title */}
                 <Text
                   style={{
                     display: 'flex',
@@ -299,6 +308,7 @@ class RequestsPage extends React.Component {
                   Fresh Fruit Needed!
                 </Text>
               </View>
+              {/* rest of card */}
               <View
                 style={{
                   width: 342,
@@ -331,6 +341,7 @@ class RequestsPage extends React.Component {
                   Apples{'\n'}Oranges{'\n'}Bananas{'\n'}
                   {'\n'}Food Bank in Charlotte
                 </Text>
+                {/* card image */}
                 <ImageBackground
                   style={{
                     width: '33.92%',
@@ -345,6 +356,7 @@ class RequestsPage extends React.Component {
                 />
               </View>
             </ImageBackground>
+            {/*end card*/}
             <View
               style={{
                 width: 332.2,

@@ -23,7 +23,7 @@ class DriverMainPage extends React.Component {
 
   gotoRequests = () => {
     this.props.navigation.navigate('View Requests', {
-      uid: this.props.route.params.user.uid
+      uid: this.props.route.params.uid
     });
   }
 
@@ -642,7 +642,12 @@ class DriverMainPage extends React.Component {
                   }}
                   source={require('./../../assets/images/ad8e9c68-ed3a-4379-bf82-a0523e72516a.png')}>
                     <TouchableOpacity
-                    
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
                     onPress={() => {
                       this.gotoRequests();
                     }}>
