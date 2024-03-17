@@ -30,6 +30,10 @@ class DriverLogin extends React.Component {
     this.props.navigation.navigate('Landing Page');
   };
 
+  signup = () => {
+    this.props.navigation.navigate('Driver Signup')
+  }
+
   render() {
     return (
       <SafeAreaView>
@@ -368,7 +372,7 @@ class DriverLogin extends React.Component {
                 Not a Delivery Driver?&nbsp;
               </Text>
               <TouchableOpacity onPress={this.handleSignUp}>
-                <Text
+                <Button
                   style={{
                     display: 'flex',
                     height: '19.71%',
@@ -385,10 +389,8 @@ class DriverLogin extends React.Component {
                     textAlign: 'left',
                     zIndex: 21,
                   }}
-                  numberOfLines={1}
-                >
-                  Sign up and Get Verified
-                </Text>
+                  title='Sign up and Get Verified'>
+                </Button>
               </TouchableOpacity>
             </View>
             <ImageBackground
