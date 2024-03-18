@@ -1,10 +1,3 @@
-/**
- * Codia React Native App
- * https://codia.ai
- * https://github.com/facebook/react-native
- *
- * @format
- */
 import React from 'react';
 import {
   View,
@@ -15,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import BottomBar from '../../bottomBar';
 
 class DriverMainPage extends React.Component {
   constructor(props) {
@@ -23,9 +17,9 @@ class DriverMainPage extends React.Component {
 
   gotoRequests = () => {
     this.props.navigation.navigate('View Requests', {
-      uid: this.props.route.params.uid
+      uid: this.props.route.params.uid,
     });
-  }
+  };
 
   render() {
     console.log(this.props.route.params);
@@ -641,7 +635,7 @@ class DriverMainPage extends React.Component {
                     marginLeft: 24,
                   }}
                   source={require('./../../assets/images/ad8e9c68-ed3a-4379-bf82-a0523e72516a.png')}>
-                    <TouchableOpacity
+                  <TouchableOpacity
                     style={{
                       width: '100%',
                       height: '100%',
@@ -651,185 +645,33 @@ class DriverMainPage extends React.Component {
                     onPress={() => {
                       this.gotoRequests();
                     }}>
-                  <Text
-                    style={{
-                      display: 'flex',
-                      width: '54.47%',
-                      height: '42.41%',
-                      justifyContent: 'center',
-                      alignItems: 'flex-start',
-                      fontFamily: 'Poppins',
-                      fontSize: 16,
-                      fontWeight: '700',
-                      lineHeight: 22,
-                      color: '#ffffff',
-                      position: 'absolute',
-                      top: '25.06%',
-                      left: '23.22%',
-                      textAlign: 'center',
-                      zIndex: 52,
-                    }}
-                    numberOfLines={1}>
-                    View Other Requests{'\n'}
-                  </Text>
+                    <Text
+                      style={{
+                        display: 'flex',
+                        width: '54.47%',
+                        height: '42.41%',
+                        justifyContent: 'center',
+                        alignItems: 'flex-start',
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                        fontWeight: '700',
+                        lineHeight: 22,
+                        color: '#ffffff',
+                        position: 'absolute',
+                        top: '25.06%',
+                        left: '23.22%',
+                        textAlign: 'center',
+                        zIndex: 52,
+                      }}
+                      numberOfLines={1}>
+                      View Other Requests{'\n'}
+                    </Text>
                   </TouchableOpacity>
                 </ImageBackground>
-                <ImageBackground
-                  style={{
-                    width: 395,
-                    height: 70.065,
-                    position: 'relative',
-                    zIndex: 53,
-                    marginTop: 248.128,
-                    marginRight: 0,
-                    marginBottom: 0,
-                    marginLeft: 0,
-                  }}
-                  source={require('./../../assets/images/ed13cf37-33b0-4d27-9ecb-590d9a3452ed.png')}>
-                  <ImageBackground
-                    style={{
-                      width: '11.39%',
-                      height: '64.23%',
-                      position: 'absolute',
-                      top: '17.22%',
-                      left: '46.92%',
-                      zIndex: 58,
-                    }}
-                    source={require('./../../assets/images/0b189e77-968d-4152-bd99-9eca44c4a970.png')}>
-                    <View
-                      style={{
-                        width: 15,
-                        height: 16,
-                        position: 'relative',
-                        overflow: 'hidden',
-                        zIndex: 59,
-                        marginTop: 14,
-                        marginRight: 0,
-                        marginBottom: 0,
-                        marginLeft: 15,
-                      }}>
-                      <ImageBackground
-                        style={{
-                          width: 13.125,
-                          height: 14,
-                          position: 'relative',
-                          zIndex: 60,
-                          marginTop: 1,
-                          marginRight: 0,
-                          marginBottom: 0,
-                          marginLeft: 0.94,
-                        }}
-                        source={require('./../../assets/images/95301c48-9322-4b6b-a5fa-2519aa6fd99d.png')}
-                      />
-                    </View>
-                  </ImageBackground>
-                  <View
-                    style={{
-                      width: '4.86%',
-                      height: '32.14%',
-                      position: 'absolute',
-                      top: '34.35%',
-                      left: '72.24%',
-                      overflow: 'hidden',
-                      zIndex: 54,
-                    }}>
-                    <ImageBackground
-                      style={{
-                        width: 19.2,
-                        height: 18.017,
-                        position: 'relative',
-                        zIndex: 55,
-                        marginTop: 2.252,
-                        marginRight: 0,
-                        marginBottom: 0,
-                        marginLeft: 0,
-                      }}
-                      source={require('./../../assets/images/0d0e0c85-4a62-4a57-8561-a6a797602e8d.png')}
-                    />
-                  </View>
-                  <ImageBackground
-                    style={{
-                      width: '4.86%',
-                      height: '32.14%',
-                      position: 'absolute',
-                      top: '34.35%',
-                      left: '11.48%',
-                      overflow: 'hidden',
-                      zIndex: 56,
-                    }}
-                    source={require('./../../assets/images/11346edd-972a-4e19-93e7-1189b19bc9a0.png')}
-                  />
-                  <View
-                    style={{
-                      width: '5.06%',
-                      height: '28.55%',
-                      position: 'absolute',
-                      top: '34.35%',
-                      left: '29.2%',
-                      overflow: 'hidden',
-                      zIndex: 65,
-                    }}>
-                    <ImageBackground
-                      style={{
-                        width: 19.999,
-                        height: 20.002,
-                        position: 'relative',
-                        zIndex: 66,
-                        marginTop: 0,
-                        marginRight: 0,
-                        marginBottom: 0,
-                        marginLeft: 0,
-                      }}
-                      source={require('./../../assets/images/57c02731-e0e2-47eb-8ba3-0951b8ddf50e.png')}
-                    />
-                  </View>
-                  <View
-                    style={{
-                      width: '4.86%',
-                      height: '32.14%',
-                      position: 'absolute',
-                      top: '38.63%',
-                      left: '90.72%',
-                      overflow: 'hidden',
-                      zIndex: 61,
-                    }}>
-                    <View
-                      style={{
-                        width: '104.17%',
-                        height: '88.81%',
-                        position: 'absolute',
-                        top: '-0.29%',
-                        left: '-1.74%',
-                        overflow: 'hidden',
-                        zIndex: 63,
-                      }}>
-                      <ImageBackground
-                        style={{
-                          width: 17.5,
-                          height: 19.999,
-                          position: 'relative',
-                          zIndex: 64,
-                          marginTop: 0,
-                          marginRight: 0,
-                          marginBottom: 0,
-                          marginLeft: 1.25,
-                        }}
-                        source={require('./../../assets/images/fddc56fe-722c-4c56-9673-d0ce274bf682.png')}
-                      />
-                    </View>
-                    <ImageBackground
-                      style={{
-                        width: '87.5%',
-                        height: '99.99%',
-                        position: 'absolute',
-                        top: 0,
-                        left: '6.25%',
-                        zIndex: 62,
-                      }}
-                      source={require('./../../assets/images/8b3b8ceb-94db-428f-bd28-0b676cfb1f9e.png')}
-                    />
-                  </View>
-                </ImageBackground>
+                <View style={{
+                  height: 125
+                }}></View>
+                <BottomBar navigation={this.props.navigation} driver={true}/>
               </ImageBackground>
             </ImageBackground>
           </View>

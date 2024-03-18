@@ -1,10 +1,4 @@
-/**
- * Codia React Native App
- * https://codia.ai
- * https://github.com/facebook/react-native
- *
- * @format
- */
+
 import React from 'react';
 import {
   View,
