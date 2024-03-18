@@ -20,7 +20,6 @@ class RequesterDonorMainPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.route.params);
     return (
       <SafeAreaView>
         <ScrollView

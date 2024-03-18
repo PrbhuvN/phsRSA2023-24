@@ -16,11 +16,12 @@ class WelcomePage extends React.Component {
   }
 
   gotoRequest = () => {
-    this.props.navigation.navigate('Requester Navigation', {
-      screen: 'Main Page',
-      params: {
-        uid: this.props.route.params,
-      }
+    this.props.navigation.navigate('Requester Navigation');
+  };
+
+  gotoDonate = () => {
+    this.props.navigation.navigate('Donor Navigation', {
+      screen: 'My Donations'
     });
   };
 
@@ -161,14 +162,15 @@ class WelcomePage extends React.Component {
                       </Text>
                     </TouchableOpacity>
                   </ImageBackground></TouchableOpacity>
-                <TouchableOpacity>
+                  <TouchableOpacity
+                      onPress={this.gotoDonate}>
                   <ImageBackground
                     style={{
                       width: 148.267,
                       height: 173.911,
                       flexShrink: 0,
                       position: 'relative',
-                      zIndex: 11,
+                      zIndex: 41,
                     }}
                     source={require('./../assets/images/9f30fdb5-6b06-467b-bd98-5c0fce20b498.png')}>
                     <ImageBackground
