@@ -479,7 +479,7 @@ class WelcomePage extends React.Component {
                         position: 'relative',
                         zIndex: 38,
                         marginTop: 5,
-                        marginRight: 0,
+                        marginRight: 20,
                         marginBottom: 0,
                         marginLeft: 1.25,
                       }}
