@@ -29,7 +29,7 @@ class RequesterDonorMainPage extends React.Component {
           <View
             style={{
               width: 400,
-              height: 812,
+              height: 860,
               position: 'relative',
               overflow: 'hidden',
               marginTop: 0,
@@ -41,7 +41,7 @@ class RequesterDonorMainPage extends React.Component {
             <ImageBackground
               style={{
                 width: 394.667,
-                height: 812,
+                height: 860,
                 position: 'relative',
                 marginTop: 0,
                 marginRight: 0,
@@ -360,7 +360,7 @@ class RequesterDonorMainPage extends React.Component {
                     View My Requests
                   </Text>
                 </ImageBackground>
-                <BottomBar navigation={this.props.navigation} driver={true} />
+                
                 </ImageBackground>
               </ImageBackground>
           </View>

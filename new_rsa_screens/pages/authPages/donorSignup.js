@@ -50,43 +50,7 @@ class DonorSignup extends React.Component {
               marginBottom: 0,
               marginLeft: 'auto',
             }}>
-            <View
-              style={{
-                width: 28,
-                height: 39.448,
-                position: 'relative',
-                overflow: 'hidden',
-                zIndex: 18,
-                marginTop: 40.857,
-                marginRight: 0,
-                marginBottom: 0,
-                marginLeft: 23,
-              }}>
-              <TouchableOpacity
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-                onPress={() => {
-                  this.goBack();
-                }}>
-              <ImageBackground
-                style={{
-                  width: 11.303,
-                  height: 24.663,
-                  position: 'relative',
-                  zIndex: 19,
-                  marginTop: 7.393,
-                  marginRight: 0,
-                  marginBottom: 0,
-                  marginLeft: 8.349,
-                }}
-                source={require('./../../assets/images/f315e544-b31a-4778-954d-a74d6e051009.png')}
-              />
-              </TouchableOpacity>
-            </View>
+           
             <View
               style={{
                 width: 303,
@@ -361,13 +325,13 @@ class DonorSignup extends React.Component {
                 color: 'black',
                 position: 'absolute',
                 top: '46.42%',
-                left: '-0.5%',
-                textAlign: 'center',
+                left: '15.5%',
+                textAlign: 'left',
                 zIndex: 23,
               }}
               onChangeText={(text) => this.setState({email:text})}
               numberOfLines={1}
-              placeholder='email'>
+              placeholder='Email'>
             </TextInput>
             <View
               style={{
@@ -398,14 +362,14 @@ class DonorSignup extends React.Component {
                 color: 'black',
                 position: 'absolute',
                 top: '53.76%',
-                left: '9%',
-                textAlign: 'center',
+                left: '15%',
+                textAlign: 'left',
                 zIndex: 24,
               }}
               onChangeText={(text) => this.setState({password:text})}
               numberOfLines={1}
               secureTextEntry={true}
-              placeholder='password'>
+              placeholder='Password'>
             </TextInput>
             <View
               style={{
@@ -437,15 +401,15 @@ class DonorSignup extends React.Component {
                 color: 'black',
                 position: 'absolute',
                 top: '61.1%',
-                left: '3.75%',
-                textAlign: 'center',
+                left: '15.75%',
+                textAlign: 'left',
                 zIndex: 25,
                 
               }}
               onChangeText={(text) => this.setState({confirmPassword:text})}
               secureTextEntry={true}
               numberOfLines={1}
-              placeholder='re-enter password'>
+              placeholder='Re-enter Password'>
             </TextInput>
           </View>
         </ScrollView>
