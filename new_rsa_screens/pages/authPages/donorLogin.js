@@ -137,6 +137,7 @@ class DonorLogin extends React.Component {
                   height: '100%',
                   backgroundColor: '#d9d9d9',
                   borderTopLeftRadius: 36,
+                  padding: 10,
                   borderTopRightRadius: 36,
                   borderBottomRightRadius: 36,
                   borderBottomLeftRadius: 36,
@@ -191,12 +192,14 @@ class DonorLogin extends React.Component {
                   borderTopRightRadius: 36,
                   borderBottomRightRadius: 36,
                   borderBottomLeftRadius: 36,
+                  padding: 10,
                   position: 'absolute',
                   top: 0,
                   left: '39.63%',
                   zIndex: 15,
                 }}
                 placeholder="password"
+                secureTextEntry={true}
                 onChangeText={text =>
                   this.setState({password: text})
               }
