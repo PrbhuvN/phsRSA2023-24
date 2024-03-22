@@ -19,11 +19,7 @@ class AuthNav extends React.Component {
 
   render() {
     return ( 
-        <AuthStack.Navigator initialRouteName='Authentication' screenOptions={{
-          contentStyle: {
-            backgroundColor: '#d8fdd1'
-          }
-        }}>
+        <AuthStack.Navigator initialRouteName='Authentication'>
           <AuthStack.Screen
             name='Landing Page'
             component={LandingPage}

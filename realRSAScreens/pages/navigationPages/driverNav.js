@@ -19,11 +19,7 @@ class DriverNav extends React.Component {
   render() {
     //console.log(this.props.navigation.state.params);
     return ( 
-        <DriverStack.Navigator initialRouteName='Driver Navigation' screenOptions={{
-          contentStyle: {
-            backgroundColor: '#d8fdd1'
-          }
-        }}>
+        <DriverStack.Navigator initialRouteName='Driver Navigation'>
           <DriverStack.Screen
             name='Main Page'
             component={DriverMainPage}

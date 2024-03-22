@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { DefaultTheme } from '@react-navigation/native';
+
 
 import AuthNav from './authNav';
 import DriverNav from './driverNav';
@@ -10,6 +12,9 @@ import SupportNav from './supportNav';
 
 const Stack = createStackNavigator();
 
+const navTheme = DefaultTheme;
+navTheme.colors.background = '#d8fdd1';
+
 class App extends React.Component {
 
   constructor(props) {
@@ -18,12 +23,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName='Parent Navigation' screenOptions={{
-          contentStyle: {
-            backgroundColor: '#d8fdd1'
-          }
-        }}>
+      <NavigationContainer
+        theme={navTheme}>
+        <Stack.Navigator initialRouteName='Parent Navigation'>
           <Stack.Screen
             name='Authentication'
             component={AuthNav}

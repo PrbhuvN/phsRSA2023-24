@@ -20,11 +20,7 @@ class DonatorNav extends React.Component {
 
   render() {
     return ( 
-        <RequesterStack.Navigator initialRouteName='Requester Navigation' screenOptions={{
-          contentStyle: {
-            backgroundColor: '#d8fdd1'
-          }
-        }}>
+        <RequesterStack.Navigator initialRouteName='Requester Navigation'>
           <RequesterStack.Screen
             name='Main Page'
             component={RequesterDonorMainPage}

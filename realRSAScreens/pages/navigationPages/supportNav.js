@@ -16,11 +16,7 @@ class SupportNav extends React.Component {
 
   render() {
     return ( 
-        <SupportStack.Navigator initialRouteName='Support Navigation' screenOptions={{
-          contentStyle: {
-            backgroundColor: '#d8fdd1'
-          }
-        }}>
+        <SupportStack.Navigator initialRouteName='Support Navigation'>
           <SupportStack.Screen
             name='Chat Page'
             component={ChatPage}
