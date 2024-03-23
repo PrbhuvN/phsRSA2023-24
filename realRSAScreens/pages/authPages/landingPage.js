@@ -7,7 +7,6 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 class LandingPage extends React.Component {
 

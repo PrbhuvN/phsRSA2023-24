@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
-  ImageBackground,
   SafeAreaView,
   Image,
   ScrollView,
@@ -11,10 +10,9 @@ import {
   Button,
   TouchableOpacity
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 import { firebaseApp } from '../../FirebaseConfig';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const auth = getAuth(firebaseApp);
 

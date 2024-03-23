@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -8,13 +8,11 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 import firebaseApp from '../../FirebaseConfig';
 import {
   getAuth,
   signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import { ScrollView } from 'react-native-gesture-handler';
 
