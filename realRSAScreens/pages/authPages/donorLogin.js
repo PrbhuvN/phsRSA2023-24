@@ -42,6 +42,9 @@ class DonorLogin extends React.Component {
     return (
       <SafeAreaView style={styles.mainFlex}>
         <ScrollView>
+          <TouchableOpacity onPress={this.goBack}>
+            <Image source={require("../../assets/icons/backIcon.png")} style={styles.backIcon} />
+          </TouchableOpacity>
           <Text style={styles.titleContent}>GreenCornucopia</Text>
           <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo} />
           <View style={styles.inputView}>
@@ -116,7 +119,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 100,
     textAlign: 'center',
-    paddingTop: 30,
   },
   buttonView: {
     backgroundColor: '#4085f5',
@@ -146,6 +148,10 @@ const styles = StyleSheet.create({
   },
   passwordInput: {
     borderRadius: 10,
+  },
+  backIcon: {
+    marginTop: 10,
+    marginLeft: 10,
   },
 });
 

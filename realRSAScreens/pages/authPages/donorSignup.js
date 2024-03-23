@@ -31,13 +31,16 @@ class DonorSignup extends React.Component {
     };
   }
   goBack = () => {
-    this.props.navigation.navigate('Donor Portal');
+    this.props.navigation.navigate('Donor Login');
   };
 
   render() {
     return (
       <SafeAreaView style={styles.mainFlex}>
         <ScrollView>
+          <TouchableOpacity onPress={this.goBack}>
+            <Image source={require("../../assets/icons/backIcon.png")} style={styles.backIcon} />
+          </TouchableOpacity>
           <Text style={styles.titleContent}>GreenCornucopia</Text>
           <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo} />
           <View style={styles.inputView}>
@@ -45,7 +48,6 @@ class DonorSignup extends React.Component {
             <TextInput
               styles={styles.emailInput}
               autoCorrect={false}
-
               autoCapitalize={false}
               borderRadius={8}
               placeholderTextColor={'#cccccc'}
@@ -109,17 +111,17 @@ class DonorSignup extends React.Component {
             <Text styles={styles.inputText}>Confirm Password:</Text>
             <TextInput
               secureTextEntry={true}
-              styles={styles.passwordInput}
               borderRadius={8}
               placeholderTextColor={'#cccccc'}
               backgroundColor='#ffffff'
               padding={7}
               placeholder='********'
+              styles={styles.passwordInput}
               onChangeText={text => { this.setState({ confirmPassword: text }) }} />
           </View>
           <TouchableOpacity onPress={() => { signup(this.state, this.props.navigation); }}>
-            <View style={styles.buttonView} color={''}>
-              <Text styles={styles.buttonText} color={'#ffffff'}>
+            <View style={styles.buttonView}>
+              <Text styles={styles.buttonText}>
                 Request Account Creation
               </Text>
             </View>
@@ -140,11 +142,15 @@ const styles = StyleSheet.create({
   logo: {
     alignSelf: 'center',
   },
+  backIcon: {
+    marginTop: 10,
+    marginLeft: 10,
+  },
   titleContent: {
     fontSize: 30,
-    fontWeight: 100,
+    fontWeight: '300',
     textAlign: 'center',
-    paddingTop: 30,
+    paddingTop: 0,
   },
   buttonView: {
     backgroundColor: '#4085f5',

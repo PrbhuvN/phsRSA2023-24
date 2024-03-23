@@ -18,17 +18,24 @@ class WelcomePage extends React.Component {
 
   gotoRequest = () => {
     this.props.navigation.navigate('Requester Navigation', {
-      screen: 'Main Page'
+      screen: 'Main Page',
+      params: {
+        uid: this.props.route.params.uid
+      }
     });
   };
 
   gotoDonate = () => {
     this.props.navigation.navigate('Donor Navigation', {
-      screen: 'Main Page'
+      screen: 'Main Page',
+      params: {
+        uid: this.props.route.params.uid
+      }
     });
   };
 
   render() {
+    console.log('uid: ' + this.props.route.params.uid);
     return (
       <SafeAreaView style={styles.mainFlex}>
         <Text style={styles.welcomeTitle}>
@@ -37,7 +44,7 @@ class WelcomePage extends React.Component {
         <View style={styles.redirectContainer}>
           <TouchableOpacity onPress={this.gotoRequest}>
             <View style={styles.redirectCard}>
-              <Image source={require("../../assets/icons/requestIcon.png")} style={styles.icon} />
+              <Image source={require("../../assets/icons/requestIcon.png")} style={styles.redirectIcon} />
               <Text>
                 Request
               </Text>
@@ -45,7 +52,7 @@ class WelcomePage extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity onPress={this.gotoDonate}>
             <View style={styles.redirectCard}>
-              <Image source={require("../../assets/icons/donateIcon.png")} style={styles.icon} />
+              <Image source={require("../../assets/icons/donateIcon.png")} style={styles.redirectIcon} />
               <Text>
                 Distribute
               </Text>
@@ -86,8 +93,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  icon: {
-    alignSelf: 'center'
+  redirectIcon: {
+    alignSelf: 'center',
+    margin: 5,
+    width: 40,
+    height: 40,
   }
 });
 
