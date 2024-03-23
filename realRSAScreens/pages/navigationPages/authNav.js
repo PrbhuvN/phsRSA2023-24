@@ -6,7 +6,7 @@ import DonorSignup from '../authPages/donorSignup.js';
 import DriverLogin from '../authPages/deliveryDriverLogin.js';
 import DriverSignup from '../authPages/driverSignup.js';
 import ReviewPage from '../authPages/accountReview.js'
-import WelcomePage from '../welcomePage.js';
+import WelcomePage from '../authPages/welcomePage.js';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const AuthStack = createStackNavigator();

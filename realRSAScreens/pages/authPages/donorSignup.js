@@ -38,103 +38,92 @@ class DonorSignup extends React.Component {
     return (
       <SafeAreaView style={styles.mainFlex}>
         <ScrollView>
-        <Text style={styles.titleContent}>GreenCornucopia</Text>
-        <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo}/>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>First Name:</Text>
-          <TextInput
-            styles={styles.emailInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            borderRadius={8}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            padding={7}
-            placeholder='John'
-            onChangeText={text => { this.setState({ fName: text }) }} />
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Last Name:</Text>
-          <TextInput
-            styles={styles.emailInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            borderRadius={8}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            padding={7}
-            placeholder='Doe'
-            onChangeText={text => { this.setState({ lName: text }) }} />
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Phone Number:</Text>
-          <TextInput
-            styles={styles.emailInput}
-            autoCorrect={false}
-            autoComplete={false}
-            borderRadius={8}
-            autoCapitalize={false}
-            keyboardType='phone-pad'
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            padding={7}
-            placeholder='xxx-xxx-xxxx'
-            onChangeText={text => { this.setState({ number: text }) }} />
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Email:</Text>
-          <TextInput
-            styles={styles.emailInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            keyboardType='email-address'
-            borderRadius={8}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            padding={7}
-            placeholder='green@cornucopia.com'
-            onChangeText={text => { this.setState({ email: text }) }} />
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Password:</Text>
-          <TextInput
-            ssecureTextEntry={true}
-            styles={styles.passwordInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            borderRadius={8}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            padding={7}
-            placeholder='********'
-            onChangeText={text => {this.setState({password: text})}}/>
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Confirm Password:</Text>
-          <TextInput
-            secureTextEntry={true}
-            styles={styles.passwordInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            borderRadius={8}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            padding={7}
-            placeholder='********'
-            onChangeText={text => {this.setState({confirmPassword: text})}}/>
-        </View>
-        <TouchableOpacity onPress={() => {signup(this.state, this.props.navigation);}}>
-          <View style={styles.buttonView} color={''}>
-            <Text styles={styles.buttonText} color={'#ffffff'}>
-              Request Account Creation
-            </Text>
+          <Text style={styles.titleContent}>GreenCornucopia</Text>
+          <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo} />
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>First Name:</Text>
+            <TextInput
+              styles={styles.emailInput}
+              autoCorrect={false}
+
+              autoCapitalize={false}
+              borderRadius={8}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              padding={7}
+              placeholder='John'
+              onChangeText={text => { this.setState({ fName: text }) }} />
           </View>
-        </TouchableOpacity>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Last Name:</Text>
+            <TextInput
+              styles={styles.emailInput}
+              autoCorrect={false}
+
+              autoCapitalize={false}
+              borderRadius={8}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              padding={7}
+              placeholder='Doe'
+              onChangeText={text => { this.setState({ lName: text }) }} />
+          </View>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Phone Number:</Text>
+            <TextInput
+              styles={styles.emailInput}
+              borderRadius={8}
+              keyboardType='phone-pad'
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              padding={7}
+              placeholder='xxx-xxx-xxxx'
+              onChangeText={text => { this.setState({ number: text }) }} />
+          </View>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Email:</Text>
+            <TextInput
+              styles={styles.emailInput}
+              autoCapitalize={false}
+              keyboardType='email-address'
+              borderRadius={8}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              padding={7}
+              placeholder='green@cornucopia.com'
+              onChangeText={text => { this.setState({ email: text }) }} />
+          </View>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Password:</Text>
+            <TextInput
+              ssecureTextEntry={true}
+              styles={styles.passwordInput}
+              borderRadius={8}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              padding={7}
+              placeholder='********'
+              onChangeText={text => { this.setState({ password: text }) }} />
+          </View>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Confirm Password:</Text>
+            <TextInput
+              secureTextEntry={true}
+              styles={styles.passwordInput}
+              borderRadius={8}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              padding={7}
+              placeholder='********'
+              onChangeText={text => { this.setState({ confirmPassword: text }) }} />
+          </View>
+          <TouchableOpacity onPress={() => { signup(this.state, this.props.navigation); }}>
+            <View style={styles.buttonView} color={''}>
+              <Text styles={styles.buttonText} color={'#ffffff'}>
+                Request Account Creation
+              </Text>
+            </View>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     );
@@ -182,13 +171,9 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   emailInput: {
-    autoCapitalize: 'none',
-    autoCorrect: 'false',
     borderRadius: 15,
   },
   passwordInput: {
-    autoCapitalize: 'none',
-    autoCorrect: 'false',
     borderRadius: 15,
   },
 });

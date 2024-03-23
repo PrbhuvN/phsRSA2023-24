@@ -47,7 +47,7 @@ class DriverLogin extends React.Component {
             <TextInput
               styles={styles.emailInput}
               autoCorrect={false}
-              autoComplete={false}
+
               autoCapitalize={false}
               keyboardType='email-address'
               placeholderTextColor={'#cccccc'}
@@ -63,7 +63,7 @@ class DriverLogin extends React.Component {
               secureTextEntry={true}
               styles={styles.passwordInput}
               autoCorrect={false}
-              autoComplete={false}
+
               autoCapitalize={false}
               placeholderTextColor={'#cccccc'}
               backgroundColor='#ffffff'
@@ -144,13 +144,9 @@ const styles = StyleSheet.create({
     alignContent: 'left',
   },
   emailInput: {
-    autoCapitalize: 'none',
-    autoCorrect: 'false',
     borderRadius: 10,
   },
   passwordInput: {
-    autoCapitalize: 'none',
-    autoCorrect: 'false',
     borderRadius: 10,
   },
 });

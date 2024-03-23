@@ -42,48 +42,48 @@ class DonorLogin extends React.Component {
     return (
       <SafeAreaView style={styles.mainFlex}>
         <ScrollView>
-        <Text style={styles.titleContent}>GreenCornucopia</Text>
-        <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo}/>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Email:</Text>
-          <TextInput
-            styles={styles.emailInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            keyboardType='email-address'
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            borderRadius={8}
-            padding={7}
-            placeholder='green@cornucopia.com'
-            onChangeText={text => {this.setState({email: text})}}/>
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Password:</Text>
-          <TextInput
-            secureTextEntry={true}
-            styles={styles.passwordInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            borderRadius={8}
-            padding={7}
-            placeholder='********'
-            onChangeText={text => {this.setState({password: text})}}/>
-        </View>
-        <TouchableOpacity onPress={() => {login(this.state, this.props.navigation);}}>
-          <View style={styles.buttonView} color={''}>
-            <Text styles={styles.buttonText} color={'#ffffff'}>
-              Login
-            </Text>
+          <Text style={styles.titleContent}>GreenCornucopia</Text>
+          <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo} />
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Email:</Text>
+            <TextInput
+              styles={styles.emailInput}
+              autoCorrect={false}
+
+              autoCapitalize={false}
+              keyboardType='email-address'
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              borderRadius={8}
+              padding={7}
+              placeholder='green@cornucopia.com'
+              onChangeText={text => { this.setState({ email: text }) }} />
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={{ marginTop: 'auto', padding: 20 }} onPress={this.signUp}>
-          <Text>No Account? Click here to Sign Up.</Text>
-        </TouchableOpacity>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Password:</Text>
+            <TextInput
+              secureTextEntry={true}
+              styles={styles.passwordInput}
+              autoCorrect={false}
+
+              autoCapitalize={false}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              borderRadius={8}
+              padding={7}
+              placeholder='********'
+              onChangeText={text => { this.setState({ password: text }) }} />
+          </View>
+          <TouchableOpacity onPress={() => { login(this.state, this.props.navigation); }}>
+            <View style={styles.buttonView} color={''}>
+              <Text styles={styles.buttonText} color={'#ffffff'}>
+                Login
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ marginTop: 'auto', padding: 20 }} onPress={this.signUp}>
+            <Text>No Account? Click here to Sign Up.</Text>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     );
@@ -142,13 +142,9 @@ const styles = StyleSheet.create({
     alignContent: 'left',
   },
   emailInput: {
-    autoCapitalize: 'none',
-    autoCorrect: 'false',
     borderRadius: 10,
   },
   passwordInput: {
-    autoCapitalize: 'none',
-    autoCorrect: 'false',
     borderRadius: 10,
   },
 });
