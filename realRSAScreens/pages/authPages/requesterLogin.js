@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  ImageBackground,
-  SafeAreaView,
   Image,
-  ScrollView,
+  SafeAreaView,
   TextInput,
   StyleSheet,
-  Button,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { firebaseApp } from './../../FirebaseConfig';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import firebaseApp from '../../FirebaseConfig';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const auth = getAuth(firebaseApp);
 
-class DriverLogin extends React.Component {
-
+class RequesterLogin extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: '',
       password: '',
@@ -33,7 +35,7 @@ class DriverLogin extends React.Component {
   };
 
   signUp = () => {
-    this.props.navigation.navigate('Driver Signup');
+    this.props.navigation.navigate('Requester Signup');
   };
 
   render() {
@@ -78,12 +80,12 @@ class DriverLogin extends React.Component {
           <TouchableOpacity onPress={() => { login(this.state, this.props.navigation); }}>
             <View style={styles.buttonView} color={''}>
               <Text styles={styles.buttonText} color={'#ffffff'}>
-                Login
+                Login as Recipient
               </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={{ marginTop: 'auto', padding: 20 }} onPress={this.signUp}>
-            <Text>Not a driver? Click here to get certified.</Text>
+            <Text>No Account? Click here to Sign Up.</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
@@ -95,12 +97,11 @@ const login = async (state, navigation) => {
   try {
     const response = await signInWithEmailAndPassword(auth, state.email, state.password);
     console.log(response);
-    navigation.navigate('Driver Navigation', {
-      screen: 'Main Page',
-      params:
-      {
-        uid: response.user.uid
-      }
+    navigation.navigate('Requester Navigation', {
+        screen: 'Main Page',
+        params: {
+          uid: response.user.uid
+        }
     });
   } catch (error) {
     console.log(error);
@@ -159,4 +160,4 @@ const styles = StyleSheet.create({
 
 
 
-export default DriverLogin;
+export default RequesterLogin;

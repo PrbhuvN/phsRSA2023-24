@@ -22,6 +22,7 @@ class RequesterDonorMainPage extends React.Component {
   render() {
     return (
       <SafeAreaView>
+        <Text>Requester Main Page</Text>
       </SafeAreaView>
     );
   }

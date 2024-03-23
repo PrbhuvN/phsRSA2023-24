@@ -18,6 +18,7 @@ class DonatorMainPage extends React.Component {
   render() {
     return (
       <SafeAreaView>
+        <Text>Donor Main Page</Text>
       </SafeAreaView>
     );
   }

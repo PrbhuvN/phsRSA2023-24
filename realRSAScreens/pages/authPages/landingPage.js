@@ -15,10 +15,15 @@ class LandingPage extends React.Component {
     super(props);
   }
 
-  donorRecipientPortal = () => {
+  donorPortal = () => {
     this.props.navigation.navigate('Donor Login');
-    console.log('Donor/Recipient button pressed!');
+    console.log('Donor button pressed!');
   };
+
+  recipientPortal = () => {
+    this.props.navigation.navigate('Requester Login');
+    console.log('Requester button pressed!');
+  }
 
   driverPortal = () => {
     this.props.navigation.navigate('Driver Login');
@@ -30,16 +35,23 @@ class LandingPage extends React.Component {
       <SafeAreaView style={styles.mainFlex}>
         <Text style={styles.titleContent}>GreenCornucopia</Text>
         <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo}/>
-        <TouchableOpacity onPress={this.donorRecipientPortal}>
+        <TouchableOpacity onPress={this.donorPortal}>
           <View style={styles.buttonView}>
-            <Text styles={styles.buttonText} color={'#ffffff'}>
-              Donor/Recipient Portal
+            <Text styles={styles.buttonText}>
+              Donor Portal
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.recipientPortal}>
+          <View style={styles.buttonView}>
+            <Text styles={styles.buttonText}>
+              Recipient Portal
             </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.driverPortal}>
           <View style={styles.buttonView}>
-            <Text styles={styles.buttonText} color={'#ffffff'}>
+            <Text styles={styles.buttonText}>
               Delivery Driver Portal
             </Text>
           </View>

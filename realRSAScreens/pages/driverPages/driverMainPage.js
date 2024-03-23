@@ -23,6 +23,7 @@ class DriverMainPage extends React.Component {
   render() {
     return (
       <SafeAreaView>
+        <Text>Driver Main Page</Text>
       </SafeAreaView>
     );
   }

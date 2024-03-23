@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RequesterDonorMainPage from '../requesterPages/requesterDonorMainPage';
+import RequesterMainPage from '../requesterPages/requesterMainPage';
 import RequestConfirmation from '../requesterPages/foodRequestConfirm';
 import RequestExpiry from '../requesterPages/foodRequestExpiry';
 import RequestInfo from '../requesterPages/foodRequestInfo';
@@ -23,7 +23,7 @@ class DonatorNav extends React.Component {
         <RequesterStack.Navigator initialRouteName='Requester Navigation'>
           <RequesterStack.Screen
             name='Main Page'
-            component={RequesterDonorMainPage}
+            component={RequesterMainPage}
             options={{ headerShown: false }}
           />
           <RequesterStack.Screen

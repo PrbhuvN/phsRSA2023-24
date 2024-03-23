@@ -122,7 +122,7 @@ class DonorSignup extends React.Component {
           <TouchableOpacity onPress={() => { signup(this.state, this.props.navigation); }}>
             <View style={styles.buttonView}>
               <Text styles={styles.buttonText}>
-                Request Account Creation
+                Request Donor Account Creation
               </Text>
             </View>
           </TouchableOpacity>

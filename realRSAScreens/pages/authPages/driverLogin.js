@@ -2,28 +2,26 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  Image,
+  ImageBackground,
   SafeAreaView,
+  Image,
+  ScrollView,
   TextInput,
   StyleSheet,
-  TouchableOpacity,
+  Button,
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import firebaseApp from '../../FirebaseConfig';
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from 'firebase/auth';
-import { ScrollView } from 'react-native-gesture-handler';
+import { firebaseApp } from '../../FirebaseConfig';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const auth = getAuth(firebaseApp);
 
-class DonorLogin extends React.Component {
+class DriverLogin extends React.Component {
+
   constructor(props) {
     super(props);
-
     this.state = {
       email: '',
       password: '',
@@ -35,7 +33,7 @@ class DonorLogin extends React.Component {
   };
 
   signUp = () => {
-    this.props.navigation.navigate('Donor Signup');
+    this.props.navigation.navigate('Driver Signup');
   };
 
   render() {
@@ -80,12 +78,12 @@ class DonorLogin extends React.Component {
           <TouchableOpacity onPress={() => { login(this.state, this.props.navigation); }}>
             <View style={styles.buttonView} color={''}>
               <Text styles={styles.buttonText} color={'#ffffff'}>
-                Login as Donor
+                Login as Driver
               </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={{ marginTop: 'auto', padding: 20 }} onPress={this.signUp}>
-            <Text>No Account? Click here to Sign Up.</Text>
+            <Text>Not a driver? Click here to get certified.</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
@@ -97,12 +95,13 @@ const login = async (state, navigation) => {
   try {
     const response = await signInWithEmailAndPassword(auth, state.email, state.password);
     console.log(response);
-    navigation.navigate('Donor Navigation', {
+    navigation.navigate('Driver Navigation', {
       screen: 'Main Page',
-      params: {
+      params:
+      {
         uid: response.user.uid
       }
-  });
+    });
   } catch (error) {
     console.log(error);
     alert(error);
@@ -160,4 +159,4 @@ const styles = StyleSheet.create({
 
 
 
-export default DonorLogin;
+export default DriverLogin;

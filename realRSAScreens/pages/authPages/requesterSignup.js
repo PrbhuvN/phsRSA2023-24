@@ -17,7 +17,7 @@ import { doc, setDoc } from 'firebase/firestore'
 
 const auth = getAuth(firebaseApp);
 
-class DriverSignup extends React.Component {
+class DonorSignup extends React.Component {
   constructor(props) {
     super(props);
 
@@ -31,7 +31,7 @@ class DriverSignup extends React.Component {
     };
   }
   goBack = () => {
-    this.props.navigation.navigate('Driver Login');
+    this.props.navigation.navigate('Requester Login');
   };
 
   render() {
@@ -122,7 +122,7 @@ class DriverSignup extends React.Component {
           <TouchableOpacity onPress={() => { signup(this.state, this.props.navigation); }}>
             <View style={styles.buttonView}>
               <Text styles={styles.buttonText}>
-                Request Driver Account Creation
+                Request Recipient Account Creation
               </Text>
             </View>
           </TouchableOpacity>
@@ -207,7 +207,7 @@ const signup = async (state, navigation) => {
     }
 
     try {
-      const firestoreResponse = await setDoc(doc(db, "drivers", response.user.uid), userData);
+      const firestoreResponse = await setDoc(doc(db, "users", response.user.uid), userData);
       console.log(firestoreResponse);
     } catch (error) {
       console.log(error);
@@ -220,4 +220,4 @@ const signup = async (state, navigation) => {
   }
 };
 
-export default DriverSignup;
+export default DonorSignup;
