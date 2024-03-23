@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {firebaseApp} from './../../FirebaseConfig';
+import { firebaseApp } from './../../FirebaseConfig';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const auth = getAuth(firebaseApp);
@@ -40,48 +40,48 @@ class DriverLogin extends React.Component {
     return (
       <SafeAreaView style={styles.mainFlex}>
         <ScrollView>
-        <Text style={styles.titleContent}>GreenCornucopia</Text>
-        <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo}/>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Email:</Text>
-          <TextInput
-            styles={styles.emailInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            keyboardType='email-address'
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            borderRadius={8}
-            padding={7}
-            placeholder='green@cornucopia.com'
-            onChangeText={text => {this.setState({email: text})}}/>
-        </View>
-        <View style={styles.inputView}>
-          <Text styles={styles.inputText}>Password:</Text>
-          <TextInput
-            secureTextEntry={true}
-            styles={styles.passwordInput}
-            autoCorrect={false}
-            autoComplete={false}
-            autoCapitalize={false}
-            placeholderTextColor={'#cccccc'}
-            backgroundColor='#ffffff'
-            borderRadius={8}
-            padding={7}
-            placeholder='********'
-            onChangeText={text => {this.setState({password: text})}}/>
-        </View>
-        <TouchableOpacity onPress={() => {login(this.state, this.props.navigation);}}>
-          <View style={styles.buttonView} color={''}>
-            <Text styles={styles.buttonText} color={'#ffffff'}>
-              Login
-            </Text>
+          <Text style={styles.titleContent}>GreenCornucopia</Text>
+          <Image source={require("../../assets/images/cornucopiaLogo.png")} style={styles.logo} />
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Email:</Text>
+            <TextInput
+              styles={styles.emailInput}
+              autoCorrect={false}
+              autoComplete={false}
+              autoCapitalize={false}
+              keyboardType='email-address'
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              borderRadius={8}
+              padding={7}
+              placeholder='green@cornucopia.com'
+              onChangeText={text => { this.setState({ email: text }) }} />
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={{ marginTop: 'auto', padding: 20 }} onPress={this.signUp}>
-          <Text>Not a driver? Click here to get certified.</Text>
-        </TouchableOpacity>
+          <View style={styles.inputView}>
+            <Text styles={styles.inputText}>Password:</Text>
+            <TextInput
+              secureTextEntry={true}
+              styles={styles.passwordInput}
+              autoCorrect={false}
+              autoComplete={false}
+              autoCapitalize={false}
+              placeholderTextColor={'#cccccc'}
+              backgroundColor='#ffffff'
+              borderRadius={8}
+              padding={7}
+              placeholder='********'
+              onChangeText={text => { this.setState({ password: text }) }} />
+          </View>
+          <TouchableOpacity onPress={() => { login(this.state, this.props.navigation); }}>
+            <View style={styles.buttonView} color={''}>
+              <Text styles={styles.buttonText} color={'#ffffff'}>
+                Login
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ marginTop: 'auto', padding: 20 }} onPress={this.signUp}>
+            <Text>Not a driver? Click here to get certified.</Text>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     );
@@ -92,9 +92,9 @@ const login = async (state, navigation) => {
   try {
     const response = await signInWithEmailAndPassword(auth, state.email, state.password);
     console.log(response);
-    navigation.navigate('Driver Navigation', { 
-      screen: 'Main Page', 
-      params: 
+    navigation.navigate('Driver Navigation', {
+      screen: 'Main Page',
+      params:
       {
         uid: response.user.uid
       }
