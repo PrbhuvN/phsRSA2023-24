@@ -7,7 +7,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+
+import DriverNavBar from '../driverNavBar';
 
 class DriverMainPage extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class DriverMainPage extends React.Component {
     return (
       <SafeAreaView>
         <Text>Driver Main Page</Text>
+        <DriverNavBar/>
       </SafeAreaView>
     );
   }
