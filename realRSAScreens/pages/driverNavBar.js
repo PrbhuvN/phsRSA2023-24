@@ -22,7 +22,7 @@ class NavBar extends React.Component {
                     <Image source={require("../assets/icons/searchIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require("../assets/icons/plusIcon.png")} style={styles.icon} />
+                    <Image source={require("../assets/icons/truckIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Image source={require("../assets/icons/chatIcon.png")} style={styles.icon} />
