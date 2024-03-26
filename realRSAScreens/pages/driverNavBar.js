@@ -15,19 +15,19 @@ class NavBar extends React.Component {
     render() {
         return (
             <View style={styles.containerView}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Home Page');}}>
                     <Image source={require("../assets/icons/homeIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('View Requests');}}>
                     <Image source={require("../assets/icons/searchIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Map');}}>
                     <Image source={require("../assets/icons/truckIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Support Navigation', { screen: 'Chat Page'});}}>
                     <Image source={require("../assets/icons/chatIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Support Navigation', { screen: 'Profile Page'});}}>
                     <Image source={require("../assets/icons/profileIcon.png")} style={styles.icon} />
                 </TouchableOpacity>
             </View>

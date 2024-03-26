@@ -2,7 +2,7 @@ import React from 'react';
 
 import ChatPage from '../supportPages/chatPage';
 import HelpPage from '../supportPages/helpPage';
-
+import ProfilePage from '../supportPages/profilePage';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -25,6 +25,11 @@ class SupportNav extends React.Component {
           <SupportStack.Screen
             name='Help Page'
             component={HelpPage}
+            options={{ headerShown: false }}
+          />
+          <SupportStack.Screen
+            name='Profile Page'
+            component={ProfilePage}
             options={{ headerShown: false }}
           />
         </SupportStack.Navigator>
